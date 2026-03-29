@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-03-29T08:43:41.360Z",
+  "passed": 17,
+  "failed": 1,
+  "tests": [
+    {
+      "name": "Homepage has no critical violations",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Tab key moves focus to a visible element",
+      "passed": true,
+      "details": "Focused: A "
+    },
+    {
+      "name": "Page has keyboard-accessible interactive elements",
+      "passed": true,
+      "details": "Found 6 interactive elements"
+    },
+    {
+      "name": "Focusable elements have visible focus indicators",
+      "passed": true,
+      "details": "Focus styles present"
+    },
+    {
+      "name": "Page contains form elements",
+      "passed": true,
+      "details": "Found 2 form controls"
+    },
+    {
+      "name": "Form controls have accessible labels",
+      "passed": true,
+      "details": "2/2 sampled form controls have labels"
+    },
+    {
+      "name": "No form label violations (axe-core)",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Buttons have accessible names",
+      "passed": true,
+      "details": "3/3 sampled buttons have labels"
+    },
+    {
+      "name": "No ARIA violations (axe-core)",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Light mode meets WCAG AA contrast",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Dark mode meets WCAG AA contrast",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Mobile (375x667) accessible",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Tablet (768x1024) accessible",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Desktop (1920x1080) accessible",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "ARIA live regions present for dynamic content",
+      "passed": true,
+      "details": "Found 1 live regions"
+    },
+    {
+      "name": "Skip-to-content links present",
+      "passed": true,
+      "details": "Found 1 skip links"
+    },
+    {
+      "name": "Page has semantic heading structure",
+      "passed": false,
+      "details": "H1: 0, H2: 0, H3: 0"
+    },
+    {
+      "name": "Images have alt text or proper role",
+      "passed": true,
+      "details": "1/1 images properly labeled"
+    }
+  ]
+}
