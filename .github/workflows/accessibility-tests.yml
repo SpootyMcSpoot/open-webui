@@ -1,0 +1,187 @@
+name: Accessibility Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+    paths:
+      - 'src/**'
+      - 'tests/e2e/accessibility/**'
+      - '.github/workflows/accessibility-tests.yml'
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - 'src/**'
+      - 'tests/e2e/accessibility/**'
+  workflow_dispatch:
+
+jobs:
+  accessibility-tests:
+    name: 'Run Accessibility Tests'
+    runs-on: stax-browser
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci --force
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build Frontend
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Start Development Server
+        run: |
+          npm run dev &
+          echo $! > .dev-server.pid
+
+          # Wait for server to be ready
+          timeout 60 bash -c 'until curl -s http://localhost:5173 > /dev/null; do sleep 2; done'
+          echo "Dev server ready"
+
+      - name: Run Accessibility Tests
+        run: npx playwright test tests/e2e/accessibility --reporter=list,html
+        env:
+          CI: true
+          PLAYWRIGHT_HTML_REPORT: test-results/accessibility/html-report
+
+      - name: Generate Accessibility Summary
+        if: always()
+        run: |
+          if [ -d "test-results/accessibility" ]; then
+            echo "## Accessibility Test Results" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
+            # Find the most recent summary.md
+            SUMMARY_FILE=$(find test-results/accessibility -name "summary.md" -type f | sort -r | head -1)
+
+            if [ -f "$SUMMARY_FILE" ]; then
+              cat "$SUMMARY_FILE" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "No accessibility summary generated" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi
+
+      - name: Upload Accessibility Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-reports
+          path: |
+            test-results/accessibility/**/*.json
+            test-results/accessibility/**/*.md
+            test-results/accessibility/**/*.png
+            test-results/accessibility/html-report/
+          retention-days: 30
+
+      - name: Upload Playwright Trace
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: test-results/**/*.zip
+          retention-days: 7
+
+      - name: Stop Development Server
+        if: always()
+        run: |
+          if [ -f .dev-server.pid ]; then
+            kill $(cat .dev-server.pid) || true
+            rm .dev-server.pid
+          fi
+
+      - name: Comment PR with Results
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Find summary.json
+            let summaryPath = null;
+            const findSummary = (dir) => {
+              const files = fs.readdirSync(dir);
+              for (const file of files) {
+                const fullPath = path.join(dir, file);
+                if (fs.statSync(fullPath).isDirectory()) {
+                  const result = findSummary(fullPath);
+                  if (result) return result;
+                } else if (file === 'summary.json') {
+                  return fullPath;
+                }
+              }
+              return null;
+            };
+
+            if (fs.existsSync('test-results/accessibility')) {
+              summaryPath = findSummary('test-results/accessibility');
+            }
+
+            let comment = '## Accessibility Test Results\n\n';
+
+            if (summaryPath && fs.existsSync(summaryPath)) {
+              const summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
+
+              comment += `**Status:** ${summary.violations.critical + summary.violations.serious === 0 ? '✅ PASSED' : '❌ FAILED'}\n\n`;
+              comment += `### Violations Summary\n`;
+              comment += `- **Critical:** ${summary.violations.critical}\n`;
+              comment += `- **Serious:** ${summary.violations.serious}\n`;
+              comment += `- **Moderate:** ${summary.violations.moderate}\n`;
+              comment += `- **Minor:** ${summary.violations.minor}\n`;
+              comment += `- **Total:** ${summary.violations.total}\n\n`;
+              comment += `### Passed Checks: ${summary.passes}\n\n`;
+
+              if (summary.violations.critical + summary.violations.serious > 0) {
+                comment += `### Critical/Serious Issues\n`;
+                const topViolations = Object.entries(summary.violationsByType)
+                  .sort(([,a], [,b]) => b - a)
+                  .slice(0, 5);
+
+                topViolations.forEach(([id, count]) => {
+                  comment += `- **${id}**: ${count} nodes\n`;
+                });
+
+                comment += `\n**Action Required:** Fix these accessibility violations before merging.\n`;
+              }
+            } else {
+              comment += '**Status:** ⚠️ No test results found\n';
+            }
+
+            comment += `\n[View detailed reports in artifacts](${context.payload.repository.html_url}/actions/runs/${context.runId})`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+  accessibility-checks-passed:
+    name: 'Accessibility Checks Gate'
+    runs-on: stax-general
+    needs: accessibility-tests
+    if: always()
+    steps:
+      - name: Check Test Results
+        run: |
+          if [ "${{ needs.accessibility-tests.result }}" != "success" ]; then
+            echo "Accessibility tests failed!"
+            exit 1
+          fi
+          echo "All accessibility tests passed!"
