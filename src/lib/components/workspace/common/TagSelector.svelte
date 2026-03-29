@@ -16,7 +16,7 @@
 </script>
 
 <Select.Root
-	selected={value ? items.find((item) = aria-label="{$i18n.t('Dropdown Select')}"> item.value === value) : null}
+	selected={value ? items.find((item) => item.value === value) : null}
 	{items}
 	onSelectedChange={(selectedItem) => {
 		value = selectedItem.value;

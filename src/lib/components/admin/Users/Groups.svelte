@@ -176,7 +176,7 @@
 			</div>
 
 			<Select.Root
-				selected={sortItems.find((item) = aria-label="{$i18n.t('Dropdown Select')}"> item.value === sortBy)}
+				selected={sortItems.find((item) => item.value === sortBy)}
 				items={sortItems}
 				onSelectedChange={(selectedItem) => {
 					sortBy = selectedItem.value;

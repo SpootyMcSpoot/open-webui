@@ -1066,7 +1066,7 @@
 	bind:show={showInputModal}
 	bind:value={prompt}
 	bind:inputContent
-	onChange={(content) = aria-label="{$i18n.t('Prompt')}"> {
+	onChange={(content) => {
 		console.log(content);
 		chatInputElement?.setContent(content?.json ?? null);
 	}}
@@ -1531,7 +1531,7 @@
 										{fileUploadCapableModels}
 										{screenCaptureHandler}
 										{inputFilesHandler}
-										uploadFilesHandler={() = aria-label="{$i18n.t('Text Input')}"> {
+										uploadFilesHandler={() => {
 											filesInputElement.click();
 										}}
 										uploadGoogleDriveHandler={async () => {
@@ -1950,6 +1950,7 @@
 													<button
 														id="send-message-button"
 														aria-label={uploadPending ? 'Waiting for upload' : 'Send message'}
+														aria-busy={uploadPending}
 														class="{!(prompt === '' && files.length === 0) || uploadPending
 															? 'bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
 															: 'text-white bg-gray-200 dark:text-gray-900 dark:bg-gray-700 disabled'} transition rounded-full p-1.5 self-center"

@@ -963,7 +963,7 @@
 										{#if acceptFiles}
 											<InputMenu
 												{screenCaptureHandler}
-												uploadFilesHandler={() = aria-label="{$i18n.t('Text Input')}"> {
+												uploadFilesHandler={() => {
 													filesInputElement.click();
 												}}
 											>

@@ -32,7 +32,7 @@
 
 <Select.Root
 	{items}
-	onOpenChange={() = aria-label="{$i18n.t('Dropdown Select')}"> {
+	onOpenChange={() => {
 		searchValue = '';
 	}}
 	selected={items.find((item) => item.value === value)}

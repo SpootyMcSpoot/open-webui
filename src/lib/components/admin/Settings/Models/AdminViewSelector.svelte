@@ -23,7 +23,7 @@
 </script>
 
 <Select.Root
-	selected={items.find((item) = aria-label="{$i18n.t('Dropdown Select')}"> item.value === value)}
+	selected={items.find((item) => item.value === value)}
 	{items}
 	onSelectedChange={(selectedItem) => {
 		value = selectedItem.value;
