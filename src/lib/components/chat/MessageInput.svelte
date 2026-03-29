@@ -50,7 +50,8 @@
 		getFormattedTime,
 		getUserPosition,
 		getUserTimezone,
-		getWeekday
+		getWeekday,
+		formatError
 	} from '$lib/utils';
 	import { uploadFile } from '$lib/apis/files';
 	import { generateAutoCompletion } from '$lib/apis';
@@ -196,7 +197,8 @@
 	const textVariableHandler = async (text: string) => {
 		if (text.includes('{{CLIPBOARD}}')) {
 			const clipboardText = await navigator.clipboard.readText().catch((err) => {
-				toast.error($i18n.t('Failed to read clipboard contents'));
+				const friendlyError = formatError(err, { operation: 'clipboard access' });
+				toast.error(friendlyError.message);
 				return '{{CLIPBOARD}}';
 			});
 
@@ -226,7 +228,8 @@
 			try {
 				location = await getUserPosition();
 			} catch (error) {
-				toast.error($i18n.t('Location access not allowed'));
+				const friendlyError = formatError(error, { operation: 'location access' });
+				toast.error(friendlyError.message);
 				location = 'LOCATION_UNKNOWN';
 			}
 			text = text.replaceAll('{{USER_LOCATION}}', String(location));
