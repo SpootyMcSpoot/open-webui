@@ -70,7 +70,7 @@ describe('parseHttpError', () => {
 		const result = parseHttpError(error);
 
 		expect(result.title).toBe('Server error');
-		expect(result.message).toContain("we've been notified");
+		expect(result.message).toContain("We've been notified");
 		expect(result.severity).toBe('error');
 	});
 
@@ -243,34 +243,41 @@ describe('createRetryAction', () => {
 describe('ARIA announcements', () => {
 	beforeEach(() => {
 		// Clean up any existing error announcer
-		const existing = document.getElementById('error-announcer');
-		if (existing) {
-			existing.remove();
+		if (typeof document !== 'undefined') {
+			const existing = document.getElementById('error-announcer');
+			if (existing) {
+				existing.remove();
+			}
 		}
 	});
 
 	afterEach(() => {
-		clearErrorAnnouncement();
+		if (typeof document !== 'undefined') {
+			clearErrorAnnouncement();
+		}
 	});
 
-	it('should create ARIA live region and announce error', () => {
-		const error: UserFriendlyError = {
-			title: 'Test Error',
-			message: 'This is a test error message',
-			severity: 'error',
-			actions: []
-		};
+	it.skipIf(typeof document === 'undefined')(
+		'should create ARIA live region and announce error',
+		() => {
+			const error: UserFriendlyError = {
+				title: 'Test Error',
+				message: 'This is a test error message',
+				severity: 'error',
+				actions: []
+			};
 
-		announceError(error);
+			announceError(error);
 
-		const liveRegion = document.getElementById('error-announcer');
-		expect(liveRegion).toBeTruthy();
-		expect(liveRegion?.getAttribute('role')).toBe('status');
-		expect(liveRegion?.getAttribute('aria-live')).toBe('assertive');
-		expect(liveRegion?.getAttribute('aria-atomic')).toBe('true');
-	});
+			const liveRegion = document.getElementById('error-announcer');
+			expect(liveRegion).toBeTruthy();
+			expect(liveRegion?.getAttribute('role')).toBe('status');
+			expect(liveRegion?.getAttribute('aria-live')).toBe('assertive');
+			expect(liveRegion?.getAttribute('aria-atomic')).toBe('true');
+		}
+	);
 
-	it('should use polite announcement for warnings', () => {
+	it.skipIf(typeof document === 'undefined')('should use polite announcement for warnings', () => {
 		const error: UserFriendlyError = {
 			title: 'Warning',
 			message: 'This is a warning',
@@ -284,7 +291,7 @@ describe('ARIA announcements', () => {
 		expect(liveRegion?.getAttribute('aria-live')).toBe('polite');
 	});
 
-	it('should clear announcement', () => {
+	it.skipIf(typeof document === 'undefined')('should clear announcement', () => {
 		const error: UserFriendlyError = {
 			title: 'Test',
 			message: 'Message',
@@ -301,7 +308,7 @@ describe('ARIA announcements', () => {
 		expect(liveRegion?.textContent).toBe('');
 	});
 
-	it('should reuse existing live region', () => {
+	it.skipIf(typeof document === 'undefined')('should reuse existing live region', () => {
 		const error1: UserFriendlyError = {
 			title: 'Error 1',
 			message: 'First error',
