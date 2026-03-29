@@ -1783,3 +1783,6 @@ export const displayFileHandler = (
 		stores.showFileNavPath.set(path);
 	}
 };
+
+// Re-export error handling utilities
+export * from './errors';
