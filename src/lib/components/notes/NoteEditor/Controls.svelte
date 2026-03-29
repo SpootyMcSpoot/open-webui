@@ -71,6 +71,7 @@
 					{#each files.filter((file) => file.type === 'image' || (file?.content_type ?? '').startsWith('image/')) as file, fileIdx}
 						<Image
 							src={file.url}
+							alt={file.name || 'Note image'}
 							imageClassName=" size-14 rounded-xl object-cover"
 							dismissible={true}
 							onDismiss={() => {
