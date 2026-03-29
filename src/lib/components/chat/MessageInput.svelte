@@ -1047,7 +1047,7 @@
 	bind:show={showInputVariablesModal}
 	variables={inputVariables}
 	onSave={inputVariablesModalCallback}
-/>
+ aria-label="{$i18n.t('Text Input')}" />
 
 <ValvesModal
 	bind:show={showValvesModal}
@@ -1066,7 +1066,7 @@
 	bind:show={showInputModal}
 	bind:value={prompt}
 	bind:inputContent
-	onChange={(content) => {
+	onChange={(content) = aria-label="{$i18n.t('Prompt')}"> {
 		console.log(content);
 		chatInputElement?.setContent(content?.json ?? null);
 	}}
@@ -1126,7 +1126,7 @@
 					<input
 						bind:this={filesInputElement}
 						bind:files={inputFiles}
-						type="file"
+						aria-label="{$i18n.t('Text Input')}" type="file"
 						hidden
 						multiple
 						on:change={async () => {
@@ -1531,7 +1531,7 @@
 										{fileUploadCapableModels}
 										{screenCaptureHandler}
 										{inputFilesHandler}
-										uploadFilesHandler={() => {
+										uploadFilesHandler={() = aria-label="{$i18n.t('Text Input')}"> {
 											filesInputElement.click();
 										}}
 										uploadGoogleDriveHandler={async () => {

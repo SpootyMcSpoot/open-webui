@@ -225,7 +225,7 @@
 			id="documents-import-input"
 			bind:this={toolsImportInputElement}
 			bind:files={importFiles}
-			type="file"
+			aria-label="{$i18n.t('Documents Import Input')}" type="file"
 			accept=".json"
 			hidden
 			on:change={() => {

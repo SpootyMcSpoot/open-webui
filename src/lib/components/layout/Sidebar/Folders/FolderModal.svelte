@@ -142,7 +142,7 @@
 						<div class="flex-1">
 							<input
 								id="folder-name"
-								class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
+								aria-label="{$i18n.t('Name')}" class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 								type="text"
 								bind:value={name}
 								placeholder={$i18n.t('Enter folder name')}
@@ -153,7 +153,7 @@
 
 					<input
 						id="folder-background-image-input"
-						type="file"
+						aria-label="{$i18n.t('Folder Background Image Input')}" type="file"
 						hidden
 						accept="image/*"
 						on:change={(e) => {
@@ -223,7 +223,7 @@
 									)}
 									maxSize={200}
 									bind:value={data.system_prompt}
-								/>
+								 aria-label="{$i18n.t('System Prompt')}" />
 							</div>
 						</div>
 					{/if}

@@ -345,7 +345,7 @@
 					<input
 						type="checkbox"
 						bind:checked={isProduction}
-						class="w-4 h-4 rounded border-gray-300 dark:border-gray-600"
+						aria-label="{$i18n.t('Text Input')}" class="w-4 h-4 rounded border-gray-300 dark:border-gray-600"
 					/>
 					<span class="text-sm text-gray-700 dark:text-gray-300"
 						>{$i18n.t('Set as Production')}</span
@@ -379,7 +379,7 @@
 		<div class="flex items-start justify-between gap-4 shrink-0">
 			<div class="min-w-0 flex-1">
 				<input
-					class="text-2xl w-full bg-transparent outline-hidden"
+					aria-label="{$i18n.t('Name')}" class="text-2xl w-full bg-transparent outline-hidden"
 					placeholder={$i18n.t('Prompt Name')}
 					bind:value={name}
 					on:input={debouncedSaveMetadata}
@@ -389,7 +389,7 @@
 				<div class="flex items-center gap-0.5 text-sm text-gray-600 dark:text-gray-400 w-full flex-1">
 					<span>/</span>
 					<input
-						class="bg-transparent outline-hidden"
+						aria-label="{$i18n.t('Command')}" class="bg-transparent outline-hidden"
 						placeholder={$i18n.t('command')}
 						bind:value={command}
 						on:input={debouncedSaveMetadata}
@@ -539,7 +539,7 @@
 					<div class="flex flex-col w-full">
 						<div class="flex items-center">
 							<input
-								class="text-2xl w-full bg-transparent outline-hidden"
+								aria-label="{$i18n.t('Name')}" class="text-2xl w-full bg-transparent outline-hidden"
 								placeholder={$i18n.t('Name')}
 								bind:value={name}
 								required
@@ -558,7 +558,7 @@
 						<div class="flex gap-0.5 items-center text-xs text-gray-600 dark:text-gray-400">
 							<div>/</div>
 							<input
-								class="w-full bg-transparent outline-hidden"
+								aria-label="{$i18n.t('Command')}" class="w-full bg-transparent outline-hidden"
 								placeholder={$i18n.t('Command')}
 								bind:value={command}
 								on:input={handleCommandInput}
@@ -591,7 +591,7 @@
 						bind:value={content}
 						rows={6}
 						required
-					/>
+					 aria-label="{$i18n.t('Content')}" />
 					<div class="text-xs text-gray-400 dark:text-gray-400">
 						ⓘ {$i18n.t('Use')}
 						<span class="font-medium text-gray-600 dark:text-gray-300"

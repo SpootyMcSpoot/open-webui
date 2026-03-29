@@ -241,7 +241,7 @@
 					<li class="text-start">
 						{#if item?.task}
 							<input
-								class=" translate-y-[1px] -translate-x-1"
+								aria-label="{$i18n.t('Text Input')}" class=" translate-y-[1px] -translate-x-1"
 								type="checkbox"
 								checked={item.checked}
 								on:change={(e) => {
@@ -276,7 +276,7 @@
 					<li class="text-start {item?.task ? 'flex -translate-x-6.5 gap-3 ' : ''}">
 						{#if item?.task}
 							<input
-								class=""
+								aria-label="{$i18n.t('Text Input')}" class=""
 								type="checkbox"
 								checked={item.checked}
 								on:change={(e) => {

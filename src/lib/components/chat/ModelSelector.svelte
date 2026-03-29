@@ -57,7 +57,7 @@
 					<Selector
 						id={`${selectedModelIdx}`}
 						placeholder={$i18n.t('Select a model')}
-						items={$models.map((model) => ({
+						items={$models.map((model) = aria-label="{$i18n.t('Dropdown Select')}"> ({
 							value: model.id,
 							label: model.name,
 							model: model

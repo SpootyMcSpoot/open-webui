@@ -298,7 +298,7 @@
 						<textarea
 							id="message-edit-{message.id}"
 							bind:this={messageEditTextAreaElement}
-							class=" bg-transparent outline-hidden w-full resize-none"
+							aria-label="{$i18n.t('Edited Content')}" class=" bg-transparent outline-hidden w-full resize-none"
 							bind:value={editedContent}
 							on:input={(e) => {
 								const messagesContainer = document.getElementById('messages-container');
@@ -422,7 +422,7 @@
 									>
 										<input
 											id="message-index-input-{message.id}"
-											type="number"
+											aria-label="{$i18n.t('Message Index Input {Message.Id}')}" type="number"
 											value={siblings.indexOf(message.id) + 1}
 											min="1"
 											max={siblings.length}
@@ -602,7 +602,7 @@
 									>
 										<input
 											id="message-index-input-{message.id}"
-											type="number"
+											aria-label="{$i18n.t('Message Index Input {Message.Id}')}" type="number"
 											value={siblings.indexOf(message.id) + 1}
 											min="1"
 											max={siblings.length}

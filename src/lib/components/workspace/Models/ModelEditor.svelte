@@ -383,7 +383,7 @@
 		<input
 			bind:this={filesInputElement}
 			bind:files={inputFiles}
-			type="file"
+			aria-label="{$i18n.t('Text Input')}" type="file"
 			hidden
 			accept="image/*"
 			on:change={() => {
@@ -538,7 +538,7 @@
 								<div class=" flex flex-col w-full">
 									<div class="flex-1 w-full">
 										<input
-											class="text-3xl w-full bg-transparent outline-hidden"
+											aria-label="{$i18n.t('Name')}" class="text-3xl w-full bg-transparent outline-hidden"
 											placeholder={$i18n.t('Model Name')}
 											bind:value={name}
 											required
@@ -548,7 +548,7 @@
 									<div class="flex-1 w-full">
 										<div>
 											<input
-												class="text-xs w-full bg-transparent outline-hidden"
+												aria-label="{$i18n.t('ID')}" class="text-xs w-full bg-transparent outline-hidden"
 												placeholder={$i18n.t('Model ID')}
 												bind:value={id}
 												disabled={edit}
@@ -583,7 +583,7 @@
 
 									<div>
 										<select
-											class="text-sm w-full bg-transparent outline-hidden"
+											aria-label="{$i18n.t('Base Model ID')}" class="text-sm w-full bg-transparent outline-hidden"
 											placeholder={$i18n.t('Select a base model (e.g. llama3, gpt-4o)')}
 											bind:value={info.base_model_id}
 											required
@@ -629,7 +629,7 @@
 										className=" text-sm w-full bg-transparent outline-hidden resize-none overflow-y-hidden "
 										placeholder={$i18n.t('Add a short description about what this model does')}
 										bind:value={info.meta.description}
-									/>
+									 aria-label="{$i18n.t('Description')}" />
 								{/if}
 							</div>
 
@@ -673,7 +673,7 @@
 										)}
 										rows={4}
 										bind:value={system}
-									/>
+									 aria-label="{$i18n.t('System')}" />
 								</div>
 							</div>
 
@@ -823,7 +823,7 @@
 							</div>
 						</div>
 						<input
-							class="w-full text-sm bg-transparent outline-hidden"
+							aria-label="{$i18n.t('Voice')}" class="w-full text-sm bg-transparent outline-hidden"
 							type="text"
 							bind:value={tts.voice}
 							placeholder={$i18n.t('e.g. alloy, echo, shimmer')}
@@ -878,7 +878,7 @@
 						{#if showPreview}
 							<div>
 								<textarea
-									class="text-sm w-full bg-transparent outline-hidden resize-none"
+									aria-label="{$i18n.t('Text Area')}" class="text-sm w-full bg-transparent outline-hidden resize-none"
 									rows="10"
 									value={JSON.stringify(info, null, 2)}
 									disabled

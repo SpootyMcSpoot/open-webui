@@ -145,7 +145,7 @@
 		</Tooltip>
 		<input
 			bind:this={uploadInput}
-			type="file"
+			aria-label="{$i18n.t('Text Input')}" type="file"
 			multiple
 			hidden
 			on:change={async () => {

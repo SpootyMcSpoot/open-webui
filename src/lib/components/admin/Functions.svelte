@@ -275,7 +275,7 @@
 					id="documents-import-input"
 					bind:this={functionsImportInputElement}
 					bind:files={importFiles}
-					type="file"
+					aria-label="{$i18n.t('Documents Import Input')}" type="file"
 					accept=".json"
 					hidden
 					on:change={() => {
@@ -361,7 +361,7 @@
 						<Search className="size-3.5" />
 					</div>
 					<input
-						class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-hidden bg-transparent"
+						aria-label="{$i18n.t('Query')}" class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-hidden bg-transparent"
 						bind:value={query}
 						placeholder={$i18n.t('Search Functions')}
 					/>

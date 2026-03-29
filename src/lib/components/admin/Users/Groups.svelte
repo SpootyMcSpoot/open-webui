@@ -176,7 +176,7 @@
 			</div>
 
 			<Select.Root
-				selected={sortItems.find((item) => item.value === sortBy)}
+				selected={sortItems.find((item) = aria-label="{$i18n.t('Dropdown Select')}"> item.value === sortBy)}
 				items={sortItems}
 				onSelectedChange={(selectedItem) => {
 					sortBy = selectedItem.value;
@@ -187,20 +187,20 @@
 					aria-label={$i18n.t('Sort by')}
 				>
 					<Select.Value
-						class="inline-flex h-input px-0.5 outline-hidden bg-transparent truncate placeholder-gray-400 focus:outline-hidden"
+						aria-label="{$i18n.t('Dropdown Select')}" class="inline-flex h-input px-0.5 outline-hidden bg-transparent truncate placeholder-gray-400 focus:outline-hidden"
 						placeholder={$i18n.t('Sort by')}
 					/>
 					<ChevronDown className="size-3.5" strokeWidth="2.5" />
 				</Select.Trigger>
 
 				<Select.Content
-					class="rounded-2xl min-w-[170px] p-1 border border-gray-100 dark:border-gray-800 z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg"
+					aria-label="{$i18n.t('Dropdown Select')}" class="rounded-2xl min-w-[170px] p-1 border border-gray-100 dark:border-gray-800 z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg"
 					sameWidth={false}
 					align="end"
 				>
 					{#each sortItems as item}
 						<Select.Item
-							class="flex gap-2 items-center px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl"
+							aria-label="{$i18n.t('Dropdown Select')}" class="flex gap-2 items-center px-3 py-1.5 text-sm cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl"
 							value={item.value}
 							label={item.label}
 						>

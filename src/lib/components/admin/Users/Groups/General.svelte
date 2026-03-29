@@ -20,7 +20,7 @@
 
 		<div class="flex-1">
 			<input
-				class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
+				aria-label="{$i18n.t('Name')}" class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 				type="text"
 				bind:value={name}
 				placeholder={$i18n.t('Group Name')}
@@ -40,7 +40,7 @@
 				<div class="text-gray-600 dark:text-gray-400">#</div>
 
 				<input
-					class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
+					aria-label="{$i18n.t('Color')}" class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 					type="text"
 					bind:value={color}
 					placeholder={$i18n.t('Hex Color')}
@@ -60,7 +60,7 @@
 			rows={4}
 			bind:value={description}
 			placeholder={$i18n.t('Group Description')}
-		/>
+		 aria-label="{$i18n.t('Description')}" />
 	</div>
 </div>
 
@@ -77,7 +77,7 @@
 
 			<div class="flex items-center gap-2 p-1">
 				<select
-					class="text-sm bg-transparent outline-hidden rounded-lg px-2"
+					aria-label="{$i18n.t('Dropdown Select')}" class="text-sm bg-transparent outline-hidden rounded-lg px-2"
 					value={data?.config?.share ?? 'members'}
 					on:change={(e) => {
 						const value = e.target.value;

@@ -23,7 +23,7 @@
 	{/if}
 	<input
 		{id}
-		class={`${inputClassName} ${show ? '' : 'password'} ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : ' outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-600'}`}
+		aria-label="{$i18n.t('Text Input')}" class={`${inputClassName} ${show ? '' : 'password'} ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : ' outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-600'}`}
 		{placeholder}
 		type={type === 'password' && !show ? 'password' : 'text'}
 		bind:value

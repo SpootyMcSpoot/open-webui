@@ -60,7 +60,7 @@
 
 			<div class="flex flex-row flex-1 gap-2 items-start">
 				<select
-					class="w-fit capitalize rounded-xl text-xs bg-transparent outline-hidden pl-1 pr-5"
+					aria-label="{$i18n.t('Type')}" class="w-fit capitalize rounded-xl text-xs bg-transparent outline-hidden pl-1 pr-5"
 					bind:value={banner.type}
 					required
 				>
@@ -76,7 +76,7 @@
 					placeholder={$i18n.t('Content')}
 					bind:value={banner.content}
 					maxSize={100}
-				/>
+				 aria-label="{$i18n.t('Content')}" />
 
 				<div class="relative -left-2">
 					<Tooltip content={$i18n.t('Remember Dismissal')} className="flex h-fit items-center">

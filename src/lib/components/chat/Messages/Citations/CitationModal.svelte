@@ -152,7 +152,7 @@
 								</div>
 
 								<Textarea readonly value={JSON.stringify(document.metadata.parameters, null, 2)}
-								></Textarea>
+								 aria-label="{$i18n.t('Text Area')}"></Textarea>
 							</div>
 						{/if}
 

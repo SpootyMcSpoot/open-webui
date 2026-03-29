@@ -139,7 +139,7 @@
 <input
 	bind:this={filesInputElement}
 	bind:files={inputFiles}
-	type="file"
+	aria-label="{$i18n.t('Text Input')}" type="file"
 	hidden
 	multiple
 	on:change={async () => {

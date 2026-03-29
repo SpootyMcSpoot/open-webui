@@ -318,7 +318,7 @@ class Pipe:
 						<div class="flex-1">
 							<Tooltip content={$i18n.t('e.g. My Filter')} placement="top-start">
 								<input
-									class="w-full text-2xl font-medium bg-transparent outline-hidden font-primary"
+									aria-label="{$i18n.t('Name')}" class="w-full text-2xl font-medium bg-transparent outline-hidden font-primary"
 									type="text"
 									placeholder={$i18n.t('Function Name')}
 									bind:value={name}
@@ -340,7 +340,7 @@ class Pipe:
 						{:else}
 							<Tooltip className="w-full" content={$i18n.t('e.g. my_filter')} placement="top-start">
 								<input
-									class="w-full text-sm disabled:text-gray-600 dark:text-gray-400 bg-transparent outline-hidden"
+									aria-label="{$i18n.t('ID')}" class="w-full text-sm disabled:text-gray-600 dark:text-gray-400 bg-transparent outline-hidden"
 									type="text"
 									placeholder={$i18n.t('Function ID')}
 									bind:value={id}
@@ -356,7 +356,7 @@ class Pipe:
 							placement="top-start"
 						>
 							<input
-								class="w-full text-sm bg-transparent outline-hidden"
+								aria-label="{$i18n.t('Description')}" class="w-full text-sm bg-transparent outline-hidden"
 								type="text"
 								placeholder={$i18n.t('Function Description')}
 								bind:value={meta.description}

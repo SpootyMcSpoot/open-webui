@@ -41,7 +41,7 @@
 
 		<div class="flex items-center -mr-1">
 			<select
-				class="w-full py-1 text-sm rounded-lg bg-transparent {selectedModelId
+				aria-label="{$i18n.t('Selected Model ID')}" class="w-full py-1 text-sm rounded-lg bg-transparent {selectedModelId
 					? ''
 					: 'text-gray-600 dark:text-gray-400'} placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 				bind:value={selectedModelId}

@@ -489,7 +489,7 @@
 			<textarea
 				bind:this={editTextarea}
 				bind:value={editContent}
-				class="w-full h-full text-xs font-mono text-gray-800 dark:text-gray-200 whitespace-pre break-all leading-relaxed p-3 bg-transparent border-none outline-none resize-none"
+				aria-label="{$i18n.t('Edit Content')}" class="w-full h-full text-xs font-mono text-gray-800 dark:text-gray-200 whitespace-pre break-all leading-relaxed p-3 bg-transparent border-none outline-none resize-none"
 				spellcheck="false"
 			/>
 		{:else}

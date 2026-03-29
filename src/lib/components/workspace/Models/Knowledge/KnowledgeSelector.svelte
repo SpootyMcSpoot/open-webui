@@ -131,7 +131,7 @@
 						<Search className="size-3.5" />
 					</div>
 					<input
-						class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-hidden bg-transparent"
+						aria-label="{$i18n.t('Query')}" class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-hidden bg-transparent"
 						bind:value={query}
 						placeholder={$i18n.t('Search')}
 					/>

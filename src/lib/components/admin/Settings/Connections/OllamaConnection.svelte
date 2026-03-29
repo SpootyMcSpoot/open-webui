@@ -69,7 +69,7 @@
 		{/if}
 
 		<input
-			class="w-full text-sm bg-transparent outline-hidden"
+			aria-label="{$i18n.t('URL')}" class="w-full text-sm bg-transparent outline-hidden"
 			placeholder={$i18n.t('Enter URL (e.g. http://localhost:11434)')}
 			bind:value={url}
 			readonly={true}

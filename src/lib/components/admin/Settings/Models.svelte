@@ -362,7 +362,7 @@
 							id="models-import-input"
 							bind:this={modelsImportInputElement}
 							bind:files={importFiles}
-							type="file"
+							aria-label="{$i18n.t('Models Import Input')}" type="file"
 							accept=".json"
 							hidden
 							on:change={() => {
@@ -456,7 +456,7 @@
 						<Search className="size-3.5" />
 					</div>
 					<input
-						class=" w-full text-sm py-1 rounded-r-xl outline-hidden bg-transparent"
+						aria-label="{$i18n.t('Search Value')}" class=" w-full text-sm py-1 rounded-r-xl outline-hidden bg-transparent"
 						bind:value={searchValue}
 						placeholder={$i18n.t('Search Models')}
 					/>

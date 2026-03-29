@@ -169,7 +169,7 @@
 			id="chat-import-input"
 			bind:this={chatImportInputElement}
 			bind:files={importFiles}
-			type="file"
+			aria-label="{$i18n.t('Chat Import Input')}" type="file"
 			accept=".json"
 			hidden
 		/>

@@ -809,7 +809,7 @@
 <input
 	id="files-input"
 	bind:files={inputFiles}
-	type="file"
+	aria-label="{$i18n.t('Files Input')}" type="file"
 	multiple
 	hidden
 	on:change={async () => {

@@ -670,7 +670,7 @@
 		<input
 			bind:this={filesInputElement}
 			bind:files={inputFiles}
-			type="file"
+			aria-label="{$i18n.t('Text Input')}" type="file"
 			hidden
 			multiple
 			on:change={async () => {
@@ -689,7 +689,7 @@
 		bind:show={showInputVariablesModal}
 		variables={inputVariables}
 		onSave={inputVariablesModalCallback}
-	/>
+	 aria-label="{$i18n.t('Text Input')}" />
 
 	<div class="bg-transparent">
 		<div class="max-w-full mx-auto inset-x-0 relative">
@@ -963,7 +963,7 @@
 										{#if acceptFiles}
 											<InputMenu
 												{screenCaptureHandler}
-												uploadFilesHandler={() => {
+												uploadFilesHandler={() = aria-label="{$i18n.t('Text Input')}"> {
 													filesInputElement.click();
 												}}
 											>

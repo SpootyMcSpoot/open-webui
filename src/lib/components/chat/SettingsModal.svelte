@@ -617,7 +617,7 @@
 					</div>
 					<label class="sr-only" for="search-input-settings-modal">{$i18n.t('Search')}</label>
 					<input
-						class={`w-full py-1 text-sm bg-transparent dark:text-gray-300 outline-hidden
+						aria-label="{$i18n.t('Search')}" class={`w-full py-1 text-sm bg-transparent dark:text-gray-300 outline-hidden
 								${($settings?.highContrastMode ?? false) ? 'placeholder-gray-800' : ''}`}
 						bind:value={search}
 						id="search-input-settings-modal"

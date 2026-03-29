@@ -32,7 +32,7 @@
 	{#if !disabled}
 		<input
 			bind:value={inputValue}
-			class="flex-1 min-w-24 {tags.length > 0
+			aria-label="{$i18n.t('Input Value')}" class="flex-1 min-w-24 {tags.length > 0
 				? 'px-0.5'
 				: ''} text-xs bg-transparent outline-hidden placeholder:text-gray-400 dark:placeholder:text-gray-600 dark:text-gray-400"
 			placeholder={$i18n.t('Add a tag...')}

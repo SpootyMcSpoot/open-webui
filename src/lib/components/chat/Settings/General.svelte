@@ -203,7 +203,7 @@
 				<div class=" self-center text-xs font-medium">{$i18n.t('Theme')}</div>
 				<div class="flex items-center relative">
 					<select
-						class="w-fit pr-8 rounded-sm py-2 px-2 text-xs bg-transparent text-right {$settings.highContrastMode
+						aria-label="{$i18n.t('Selected Theme')}" class="w-fit pr-8 rounded-sm py-2 px-2 text-xs bg-transparent text-right {$settings.highContrastMode
 							? ''
 							: 'outline-hidden'}"
 						bind:value={selectedTheme}
@@ -225,7 +225,7 @@
 				<div class=" self-center text-xs font-medium">{$i18n.t('Language')}</div>
 				<div class="flex items-center relative">
 					<select
-						class="w-fit pr-8 rounded-sm py-2 px-2 text-xs bg-transparent text-right {$settings.highContrastMode
+						aria-label="{$i18n.t('Lang')}" class="w-fit pr-8 rounded-sm py-2 px-2 text-xs bg-transparent text-right {$settings.highContrastMode
 							? ''
 							: 'outline-hidden'}"
 						bind:value={lang}
@@ -295,7 +295,7 @@
 							: '  dark:text-gray-300 ')}
 					rows="4"
 					placeholder={$i18n.t('Enter system prompt here')}
-				/>
+				 aria-label="{$i18n.t('System')}" />
 			</div>
 		{/if}
 

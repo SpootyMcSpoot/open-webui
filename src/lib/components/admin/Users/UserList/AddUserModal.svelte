@@ -249,7 +249,7 @@
 										id="upload-user-csv-input"
 										hidden
 										bind:files={inputFiles}
-										type="file"
+										aria-label="{$i18n.t('Upload User Csv Input')}" type="file"
 										accept=".csv"
 									/>
 

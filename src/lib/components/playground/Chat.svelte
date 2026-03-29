@@ -341,7 +341,7 @@
 						<div class="pt-1 px-1.5">
 							<textarea
 								bind:this={systemTextareaElement}
-								class="w-full h-full bg-transparent resize-none outline-hidden text-sm"
+								aria-label="{$i18n.t('System')}" class="w-full h-full bg-transparent resize-none outline-hidden text-sm"
 								bind:value={system}
 								placeholder={$i18n.t("You're a helpful assistant.")}
 								on:input={() => {
@@ -429,7 +429,7 @@
 						<!-- $i18n.t('an assistant') -->
 						<textarea
 							bind:value={message}
-							class=" w-full h-full bg-transparent resize-none outline-hidden text-sm"
+							aria-label="{$i18n.t('Message')}" class=" w-full h-full bg-transparent resize-none outline-hidden text-sm"
 							placeholder={$i18n.t(`Enter {{role}} message here`, {
 								role: role === 'user' ? $i18n.t('a user') : $i18n.t('an assistant')
 							})}
@@ -474,7 +474,7 @@
 						<div class="flex items-center justify-between gap-2 w-full sm:w-auto">
 							<div class="flex-1">
 								<select
-									class=" bg-transparent border border-gray-100/30 dark:border-gray-850/30 rounded-lg py-1 px-2 -mx-0.5 text-sm outline-hidden w-full"
+									aria-label="{$i18n.t('Selected Model ID')}" class=" bg-transparent border border-gray-100/30 dark:border-gray-850/30 rounded-lg py-1 px-2 -mx-0.5 text-sm outline-hidden w-full"
 									bind:value={selectedModelId}
 								>
 									{#each $models as model}

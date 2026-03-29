@@ -148,7 +148,7 @@
 				<div class="flex gap-2">
 					<div class="flex-1">
 						<select
-							class="  w-full rounded-sm text-xs py-2 px-1 bg-transparent outline-hidden"
+							aria-label="{$i18n.t('Tab')}" class="  w-full rounded-sm text-xs py-2 px-1 bg-transparent outline-hidden"
 							bind:value={tab}
 							placeholder={$i18n.t('Select')}
 						>
@@ -161,7 +161,7 @@
 
 					<div class="flex-1">
 						<select
-							class="w-full rounded-sm py-2 px-1 text-xs bg-transparent outline-hidden"
+							aria-label="{$i18n.t('Selected ID')}" class="w-full rounded-sm py-2 px-1 text-xs bg-transparent outline-hidden"
 							bind:value={selectedId}
 							on:change={async () => {
 								await tick();

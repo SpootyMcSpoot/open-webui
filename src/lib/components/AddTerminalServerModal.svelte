@@ -122,7 +122,7 @@
 								<div class="flex flex-1 items-center">
 									<input
 										id="terminal-name"
-										class={`w-full flex-1 text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+										aria-label="{$i18n.t('Name')}" class={`w-full flex-1 text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 										type="text"
 										bind:value={name}
 										placeholder={$i18n.t('My Terminal')}
@@ -143,7 +143,7 @@
 									<div class="flex flex-1 items-center">
 										<input
 											id="terminal-id"
-											class={`w-full flex-1 text-sm bg-transparent font-mono ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+											aria-label="{$i18n.t('ID')}" class={`w-full flex-1 text-sm bg-transparent font-mono ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 											type="text"
 											bind:value={id}
 											placeholder="auto"
@@ -167,7 +167,7 @@
 								<div class="flex flex-1 items-center">
 									<input
 										id="terminal-url"
-										class={`w-full flex-1 text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+										aria-label="{$i18n.t('URL')}" class={`w-full flex-1 text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 										type="text"
 										bind:value={url}
 										placeholder="http://localhost:9900"
@@ -236,7 +236,7 @@
 													>{$i18n.t('openapi.json URL or Path')}</label
 												>
 												<input
-													class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+													aria-label="{$i18n.t('Path')}" class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 													type="text"
 													id="openapi-path"
 													bind:value={path}
@@ -276,7 +276,7 @@
 								<div class="flex gap-2">
 									<div class="flex-shrink-0 self-start">
 										<select
-											class={`dark:bg-gray-900 w-full text-sm bg-transparent pr-5 ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+											aria-label="{$i18n.t('Auth Type')}" class={`dark:bg-gray-900 w-full text-sm bg-transparent pr-5 ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 											bind:value={auth_type}
 										>
 											<option value="none">{$i18n.t('None')}</option>

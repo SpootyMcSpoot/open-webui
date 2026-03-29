@@ -304,7 +304,7 @@
 								<div class="flex-1">
 									<input
 										id="url-input"
-										class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+										aria-label="{$i18n.t('URL')}" class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 										type="text"
 										bind:value={url}
 										placeholder={$i18n.t('API Base URL')}
@@ -374,7 +374,7 @@
 									<div class="flex-shrink-0 self-start">
 										<select
 											id="select-bearer-or-session"
-											class={`dark:bg-gray-900 w-full text-sm bg-transparent pr-5 ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+											aria-label="{$i18n.t('Auth Type')}" class={`dark:bg-gray-900 w-full text-sm bg-transparent pr-5 ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 											bind:value={auth_type}
 										>
 											<option value="none">{$i18n.t('None')}</option>
@@ -451,7 +451,7 @@
 												placeholder={$i18n.t('Enter additional headers in JSON format')}
 												required={false}
 												minSize={30}
-											/>
+											 aria-label="{$i18n.t('Headers')}" />
 										</Tooltip>
 									</div>
 								</div>
@@ -474,7 +474,7 @@
 										)}
 									>
 										<input
-											class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+											aria-label="{$i18n.t('Prefix ID')}" class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 											type="text"
 											id="prefix-id-input"
 											bind:value={prefixId}
@@ -522,7 +522,7 @@
 									<div class="flex-1">
 										<input
 											id="api-version-input"
-											class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+											aria-label="{$i18n.t('API Version')}" class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 											type="text"
 											bind:value={apiVersion}
 											placeholder={$i18n.t('API Version')}
@@ -632,7 +632,7 @@
 						<div class="flex items-center">
 							<label class="sr-only" for="add-model-id-input">{$i18n.t('Add a model ID')}</label>
 							<input
-								class="w-full py-1 text-sm rounded-lg bg-transparent {modelId
+								aria-label="{$i18n.t('Model ID')}" class="w-full py-1 text-sm rounded-lg bg-transparent {modelId
 									? ''
 									: 'text-gray-600 dark:text-gray-400'} {($settings?.highContrastMode ?? false)
 									? 'dark:placeholder:text-gray-100 placeholder:text-gray-700'

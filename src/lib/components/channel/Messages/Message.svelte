@@ -376,7 +376,7 @@
 						<Textarea
 							className=" bg-transparent outline-hidden w-full resize-none"
 							bind:value={editedContent}
-							onKeydown={(e) => {
+							onKeydown={(e) = aria-label="{$i18n.t('Edited Content')}"> {
 								if (e.key === 'Escape') {
 									document.getElementById('close-edit-message-button')?.click();
 								}

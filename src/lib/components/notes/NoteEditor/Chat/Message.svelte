@@ -90,7 +90,7 @@
 					role: message.role === 'user' ? $i18n.t('a user') : $i18n.t('an assistant')
 				})}
 				bind:value={message.content}
-				onBlur={() => {
+				onBlur={() = aria-label="{$i18n.t('Content')}"> {
 					message.edit = false;
 				}}
 			/>

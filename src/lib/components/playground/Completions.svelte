@@ -130,7 +130,7 @@
 							<div class="max-w-full">
 								<Selector
 									placeholder={$i18n.t('Select a model')}
-									items={$models.map((model) => ({
+									items={$models.map((model) = aria-label="{$i18n.t('Dropdown Select')}"> ({
 										value: model.id,
 										label: model.name,
 										model: model
@@ -152,7 +152,7 @@
 						<textarea
 							id="text-completion-textarea"
 							bind:this={textCompletionAreaElement}
-							class="w-full h-full p-3 bg-transparent border border-gray-100/30 dark:border-gray-850/30 outline-hidden resize-none rounded-lg text-sm"
+							aria-label="{$i18n.t('Text')}" class="w-full h-full p-3 bg-transparent border border-gray-100/30 dark:border-gray-850/30 outline-hidden resize-none rounded-lg text-sm"
 							bind:value={text}
 							placeholder={$i18n.t("You're a helpful assistant.")}
 						/>

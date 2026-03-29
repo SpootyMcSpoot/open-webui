@@ -39,7 +39,7 @@
 				<input
 					type="text"
 					id="floating-message-input"
-					class="bg-transparent outline-hidden w-full flex-1 text-sm"
+					aria-label="{$i18n.t('Input Value')}" class="bg-transparent outline-hidden w-full flex-1 text-sm"
 					placeholder={$i18n.t('Suggest a change')}
 					bind:value={inputValue}
 					autocomplete="off"

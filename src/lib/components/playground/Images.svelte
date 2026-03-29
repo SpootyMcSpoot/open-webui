@@ -215,7 +215,7 @@
 						<textarea
 							bind:this={promptTextareaElement}
 							bind:value={prompt}
-							class=" w-full h-full bg-transparent resize-none outline-hidden text-sm"
+							aria-label="{$i18n.t('Prompt')}" class=" w-full h-full bg-transparent resize-none outline-hidden text-sm"
 							placeholder={sourceImages.length > 0
 								? $i18n.t('Describe the edit...')
 								: $i18n.t('Describe the image...')}
@@ -238,7 +238,7 @@
 								type="file"
 								accept="image/*"
 								multiple
-								class="hidden"
+								aria-label="{$i18n.t('Text Input')}" class="hidden"
 								bind:this={fileInputElement}
 								on:change={handleFileUpload}
 							/>

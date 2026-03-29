@@ -160,7 +160,7 @@
 						<div class="flex justify-center pb-3">
 							<input
 								bind:this={imageInputElement}
-								type="file"
+								aria-label="{$i18n.t('Text Input')}" type="file"
 								hidden
 								accept="image/*"
 								on:change={(e) => {
@@ -249,7 +249,7 @@
 
 								<div class="flex-1">
 									<input
-										class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
+										aria-label="{$i18n.t('Name')}" class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 										type="text"
 										bind:value={name}
 										placeholder={$i18n.t('Model Name')}
@@ -264,7 +264,7 @@
 
 								<div class="flex-1">
 									<input
-										class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
+										aria-label="{$i18n.t('ID')}" class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 										type="text"
 										bind:value={id}
 										placeholder={$i18n.t('Model ID')}
@@ -281,7 +281,7 @@
 
 							<div class="flex-1">
 								<input
-									class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
+									aria-label="{$i18n.t('Description')}" class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 									type="text"
 									bind:value={description}
 									placeholder={$i18n.t('Enter description')}
@@ -350,7 +350,7 @@
 
 						<div class="flex items-center">
 							<select
-								class="w-full py-1 text-sm rounded-lg bg-transparent {selectedModelId
+								aria-label="{$i18n.t('Selected Model ID')}" class="w-full py-1 text-sm rounded-lg bg-transparent {selectedModelId
 									? ''
 									: 'text-gray-600 dark:text-gray-400'} placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 								bind:value={selectedModelId}

@@ -309,7 +309,7 @@
 						<div class=" self-center text-xs font-medium">{$i18n.t('Default User Role')}</div>
 						<div class="flex items-center relative">
 							<select
-								class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+								aria-label="{$i18n.t('Default User Role')}" class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 								bind:value={adminConfig.DEFAULT_USER_ROLE}
 								placeholder={$i18n.t('Select a role')}
 							>
@@ -324,7 +324,7 @@
 						<div class=" self-center text-xs font-medium">{$i18n.t('Default Group')}</div>
 						<div class="flex items-center relative">
 							<select
-								class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+								aria-label="{$i18n.t('Default Group ID')}" class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 								bind:value={adminConfig.DEFAULT_GROUP_ID}
 								placeholder={$i18n.t('Select a group')}
 							>
@@ -358,7 +358,7 @@
 
 							<div class="flex mt-2 space-x-2">
 								<input
-									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+									aria-label="{$i18n.t('Admin Email')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 									type="email"
 									placeholder={$i18n.t('Leave empty to use first admin user')}
 									bind:value={adminConfig.ADMIN_EMAIL}
@@ -376,7 +376,7 @@
 								'Enter a title for the pending user info overlay. Leave empty for default.'
 							)}
 							bind:value={adminConfig.PENDING_USER_OVERLAY_TITLE}
-						/>
+						 aria-label="{$i18n.t('Pending User Overlay Title')}" />
 					</div>
 
 					<div class="mb-2.5">
@@ -388,7 +388,7 @@
 								'Enter content for the pending user info overlay. Leave empty for default.'
 							)}
 							bind:value={adminConfig.PENDING_USER_OVERLAY_CONTENT}
-						/>
+						 aria-label="{$i18n.t('Pending User Overlay Content')}" />
 					</div>
 
 					<div class="mb-2.5 flex w-full justify-between pr-2">
@@ -413,7 +413,7 @@
 								</div>
 
 								<input
-									class="w-full mt-1 text-sm dark:text-gray-300 bg-transparent outline-hidden"
+									aria-label="{$i18n.t('API Keys Allowed Endpoints')}" class="w-full mt-1 text-sm dark:text-gray-300 bg-transparent outline-hidden"
 									type="text"
 									placeholder={`e.g.) /api/v1/messages, /api/v1/channels`}
 									bind:value={adminConfig.API_KEYS_ALLOWED_ENDPOINTS}
@@ -439,7 +439,7 @@
 
 						<div class="flex mt-2 space-x-2">
 							<input
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								aria-label="{$i18n.t('Jwt Expires In')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 								type="text"
 								placeholder={`e.g.) "30m","1h", "10d". `}
 								bind:value={adminConfig.JWT_EXPIRES_IN}
@@ -492,7 +492,7 @@
 												{$i18n.t('Label')}
 											</div>
 											<input
-												class="w-full bg-transparent outline-hidden py-0.5"
+												aria-label="{$i18n.t('Label')}" class="w-full bg-transparent outline-hidden py-0.5"
 												required
 												placeholder={$i18n.t('Enter server label')}
 												bind:value={LDAP_SERVER.label}
@@ -506,7 +506,7 @@
 												{$i18n.t('Host')}
 											</div>
 											<input
-												class="w-full bg-transparent outline-hidden py-0.5"
+												aria-label="{$i18n.t('Host')}" class="w-full bg-transparent outline-hidden py-0.5"
 												required
 												placeholder={$i18n.t('Enter server host')}
 												bind:value={LDAP_SERVER.host}
@@ -522,7 +522,7 @@
 												className="w-full"
 											>
 												<input
-													class="w-full bg-transparent outline-hidden py-0.5"
+													aria-label="{$i18n.t('Port')}" class="w-full bg-transparent outline-hidden py-0.5"
 													type="number"
 													placeholder={$i18n.t('Enter server port')}
 													bind:value={LDAP_SERVER.port}
@@ -540,7 +540,7 @@
 												placement="top-start"
 											>
 												<input
-													class="w-full bg-transparent outline-hidden py-0.5"
+													aria-label="{$i18n.t('App Dn')}" class="w-full bg-transparent outline-hidden py-0.5"
 													placeholder={$i18n.t('Enter Application DN')}
 													bind:value={LDAP_SERVER.app_dn}
 												/>
@@ -569,7 +569,7 @@
 												placement="top-start"
 											>
 												<input
-													class="w-full bg-transparent outline-hidden py-0.5"
+													aria-label="{$i18n.t('Attribute For Mail')}" class="w-full bg-transparent outline-hidden py-0.5"
 													required
 													placeholder={$i18n.t('Example: mail')}
 													bind:value={LDAP_SERVER.attribute_for_mail}
@@ -589,7 +589,7 @@
 												placement="top-start"
 											>
 												<input
-													class="w-full bg-transparent outline-hidden py-0.5"
+													aria-label="{$i18n.t('Attribute For Username')}" class="w-full bg-transparent outline-hidden py-0.5"
 													required
 													placeholder={$i18n.t(
 														'Example: sAMAccountName or uid or userPrincipalName'
@@ -609,7 +609,7 @@
 												placement="top-start"
 											>
 												<input
-													class="w-full bg-transparent outline-hidden py-0.5"
+													aria-label="{$i18n.t('Search Base')}" class="w-full bg-transparent outline-hidden py-0.5"
 													required
 													placeholder={$i18n.t('Example: ou=users,dc=foo,dc=example')}
 													bind:value={LDAP_SERVER.search_base}
@@ -623,7 +623,7 @@
 												{$i18n.t('Search Filters')}
 											</div>
 											<input
-												class="w-full bg-transparent outline-hidden py-0.5"
+												aria-label="{$i18n.t('Search Filters')}" class="w-full bg-transparent outline-hidden py-0.5"
 												placeholder={$i18n.t('Example: (&(objectClass=inetOrgPerson)(uid=%s))')}
 												bind:value={LDAP_SERVER.search_filters}
 											/>
@@ -653,7 +653,7 @@
 														{$i18n.t('Certificate Path')}
 													</div>
 													<input
-														class="w-full bg-transparent outline-hidden py-0.5"
+														aria-label="{$i18n.t('Certificate Path')}" class="w-full bg-transparent outline-hidden py-0.5"
 														placeholder={$i18n.t('Enter certificate path')}
 														bind:value={LDAP_SERVER.certificate_path}
 													/>
@@ -673,7 +673,7 @@
 													</div>
 													<Tooltip content={$i18n.t('Default to ALL')} placement="top-start">
 														<input
-															class="w-full bg-transparent outline-hidden py-0.5"
+															aria-label="{$i18n.t('Ciphers')}" class="w-full bg-transparent outline-hidden py-0.5"
 															placeholder={$i18n.t('Example: ALL')}
 															bind:value={LDAP_SERVER.ciphers}
 														/>
@@ -726,7 +726,7 @@
 
 							<div class="flex mt-2 space-x-2">
 								<input
-									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+									aria-label="{$i18n.t('Folder Max File Count')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 									type="number"
 									min="0"
 									placeholder={$i18n.t('Leave empty for unlimited')}
@@ -787,7 +787,7 @@
 						<Textarea
 							placeholder={$i18n.t('Enter a watermark for the response. Leave empty for none.')}
 							bind:value={adminConfig.RESPONSE_WATERMARK}
-						/>
+						 aria-label="{$i18n.t('Response Watermark')}" />
 					</div>
 
 					<div class="mb-2.5 w-full justify-between">
@@ -797,7 +797,7 @@
 
 						<div class="flex mt-2 space-x-2">
 							<input
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								aria-label="{$i18n.t('Webui URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 								type="text"
 								placeholder={`e.g.) "http://localhost:3000"`}
 								bind:value={adminConfig.WEBUI_URL}
@@ -818,7 +818,7 @@
 
 						<div class="flex mt-2 space-x-2">
 							<input
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								aria-label="{$i18n.t('Webhook URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 								type="text"
 								placeholder={`https://example.com/webhook`}
 								bind:value={webhookUrl}

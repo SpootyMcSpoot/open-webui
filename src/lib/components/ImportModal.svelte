@@ -90,7 +90,7 @@
 
 							<div class="flex-1">
 								<input
-									class="w-full text-sm bg-transparent disabled:text-gray-600 dark:text-gray-400 dark:disabled:text-gray-600 dark:text-gray-400 outline-hidden"
+									aria-label="{$i18n.t('URL')}" class="w-full text-sm bg-transparent disabled:text-gray-600 dark:text-gray-400 dark:disabled:text-gray-600 dark:text-gray-400 outline-hidden"
 									type="url"
 									bind:value={url}
 									placeholder={$i18n.t('Enter the URL to import')}

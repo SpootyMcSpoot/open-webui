@@ -392,7 +392,7 @@
 			<input
 				id="chat-title-input-{id}"
 				bind:value={chatTitle}
-				class=" bg-transparent w-full outline-hidden mr-10"
+				aria-label="{$i18n.t('Chat Title')}" class=" bg-transparent w-full outline-hidden mr-10"
 				placeholder={generating ? $i18n.t('Generating...') : ''}
 				disabled={generating}
 				on:keydown={chatTitleInputKeydownHandler}

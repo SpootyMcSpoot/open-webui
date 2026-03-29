@@ -148,7 +148,7 @@
 											ariaLabel={$i18n.t('Button Prompt')}
 											minSize={30}
 											bind:value={button.prompt}
-										/>
+										 aria-label="{$i18n.t('Prompt')}" />
 									</div>
 									<button
 										class="pl-3 text-xs flex rounded-sm transition"

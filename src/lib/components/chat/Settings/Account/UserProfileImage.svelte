@@ -20,7 +20,7 @@
 <input
 	id="profile-image-input"
 	bind:this={profileImageInputElement}
-	type="file"
+	aria-label="{$i18n.t('Profile Image Input')}" type="file"
 	hidden
 	accept="image/*"
 	on:change={(e) => {

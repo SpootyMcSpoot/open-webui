@@ -346,7 +346,7 @@
 							</div>
 							<div class="">
 								<select
-									class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+									aria-label="{$i18n.t('Content Extraction Engine')}" class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 									bind:value={RAGConfig.CONTENT_EXTRACTION_ENGINE}
 								>
 									<option value="">{$i18n.t('Default')}</option>
@@ -387,7 +387,7 @@
 									</div>
 									<div class="">
 										<select
-											class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Pdf Loader Mode')}" class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 											bind:value={RAGConfig.PDF_LOADER_MODE}
 										>
 											<option value="page">{$i18n.t('Page')}</option>
@@ -406,7 +406,7 @@
 									className="w-full"
 								>
 									<input
-										class="flex-1 w-full text-sm bg-transparent outline-hidden"
+										aria-label="{$i18n.t('Datalab Marker API Base URL')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 										placeholder={$i18n.t('Enter Datalab Marker API Base URL')}
 										bind:value={RAGConfig.DATALAB_MARKER_API_BASE_URL}
 									/>
@@ -436,7 +436,7 @@
 											<Textarea
 												bind:value={RAGConfig.DATALAB_MARKER_ADDITIONAL_CONFIG}
 												placeholder={$i18n.t('Enter JSON config (e.g., {"disable_links": true})')}
-											/>
+											 aria-label="{$i18n.t('Datalab Marker Additional Config')}" />
 										</Tooltip>
 									</div>
 								</div>
@@ -558,7 +558,7 @@
 								</div>
 								<div class="">
 									<select
-										class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+										aria-label="{$i18n.t('Datalab Marker Output Format')}" class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 										bind:value={RAGConfig.DATALAB_MARKER_OUTPUT_FORMAT}
 									>
 										<option value="markdown">{$i18n.t('Markdown')}</option>
@@ -570,7 +570,7 @@
 						{:else if RAGConfig.CONTENT_EXTRACTION_ENGINE === 'external'}
 							<div class="my-0.5 flex gap-2 pr-2">
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('External Document Loader URL')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									placeholder={$i18n.t('Enter External Document Loader URL')}
 									bind:value={RAGConfig.EXTERNAL_DOCUMENT_LOADER_URL}
 								/>
@@ -584,7 +584,7 @@
 							<div class="flex w-full mt-1">
 								<div class="flex-1 mr-2">
 									<input
-										class="flex-1 w-full text-sm bg-transparent outline-hidden"
+										aria-label="{$i18n.t('Tika Server URL')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 										placeholder={$i18n.t('Enter Tika Server URL')}
 										bind:value={RAGConfig.TIKA_SERVER_URL}
 									/>
@@ -593,7 +593,7 @@
 						{:else if RAGConfig.CONTENT_EXTRACTION_ENGINE === 'docling'}
 							<div class="my-0.5 flex gap-2 pr-2">
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('Docling Server URL')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									placeholder={$i18n.t('Enter Docling Server URL')}
 									bind:value={RAGConfig.DOCLING_SERVER_URL}
 								/>
@@ -614,14 +614,14 @@
 											bind:value={RAGConfig.DOCLING_PARAMS}
 											placeholder={$i18n.t('Enter additional parameters in JSON format')}
 											minSize={100}
-										/>
+										 aria-label="{$i18n.t('Docling Params')}" />
 									</div>
 								</div>
 							</div>
 						{:else if RAGConfig.CONTENT_EXTRACTION_ENGINE === 'document_intelligence'}
 							<div class="my-0.5 flex gap-2 pr-2">
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('Document Intelligence Endpoint')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									placeholder={$i18n.t('Enter Document Intelligence Endpoint')}
 									bind:value={RAGConfig.DOCUMENT_INTELLIGENCE_ENDPOINT}
 								/>
@@ -638,7 +638,7 @@
 								<div class="flex w-full">
 									<div class="flex-1 mr-2">
 										<input
-											class="flex-1 w-full text-sm bg-transparent outline-hidden"
+											aria-label="{$i18n.t('Document Intelligence Model')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 											placeholder={$i18n.t('Enter Document Intelligence Model')}
 											bind:value={RAGConfig.DOCUMENT_INTELLIGENCE_MODEL}
 										/>
@@ -648,7 +648,7 @@
 						{:else if RAGConfig.CONTENT_EXTRACTION_ENGINE === 'mistral_ocr'}
 							<div class="my-0.5 flex gap-2 pr-2">
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('Mistral Ocr API Base URL')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									placeholder={$i18n.t('Enter Mistral API Base URL')}
 									bind:value={RAGConfig.MISTRAL_OCR_API_BASE_URL}
 								/>
@@ -665,7 +665,7 @@
 										{$i18n.t('API Mode')}
 									</div>
 									<select
-										class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden"
+										aria-label="{$i18n.t('Mineru API Mode')}" class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden"
 										bind:value={RAGConfig.MINERU_API_MODE}
 										on:change={() => {
 											// Auto-update URL when switching modes if it's empty or matches the opposite mode's default
@@ -692,7 +692,7 @@
 							<!-- API URL -->
 							<div class="flex w-full mt-2">
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('Mineru API URL')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									placeholder={RAGConfig.MINERU_API_MODE === 'cloud'
 										? $i18n.t('https://mineru.net/api/v4')
 										: $i18n.t('http://localhost:8000')}
@@ -713,7 +713,7 @@
 										{$i18n.t('API Timeout')}
 									</div>
 									<input
-										class="w-16 text-sm bg-transparent outline-hidden text-right"
+										aria-label="{$i18n.t('Mineru API Timeout')}" class="w-16 text-sm bg-transparent outline-hidden text-right"
 										type="number"
 										min="1"
 										bind:value={RAGConfig.MINERU_API_TIMEOUT}
@@ -739,7 +739,7 @@
 										bind:value={RAGConfig.MINERU_PARAMS}
 										placeholder={`{\n  "enable_ocr": false,\n  "enable_formula": true,\n  "enable_table": true,\n  "language": "en",\n  "model_version": "pipeline",\n  "page_ranges": ""\n}`}
 										minSize={100}
-									/>
+									 aria-label="{$i18n.t('Mineru Params')}" />
 								</div>
 							</div>
 						{/if}
@@ -771,7 +771,7 @@
 							<div class=" self-center text-xs font-medium">{$i18n.t('Text Splitter')}</div>
 							<div class="flex items-center relative">
 								<select
-									class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+									aria-label="{$i18n.t('Text Splitter')}" class="w-fit pr-8 rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 									bind:value={RAGConfig.TEXT_SPLITTER}
 								>
 									<option value="">{$i18n.t('Default')} ({$i18n.t('Character')})</option>
@@ -804,7 +804,7 @@
 									</div>
 									<div class="self-center">
 										<input
-											class=" w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+											aria-label="{$i18n.t('Chunk Size')}" class=" w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 											type="number"
 											placeholder={$i18n.t('Enter Chunk Size')}
 											bind:value={RAGConfig.CHUNK_SIZE}
@@ -821,7 +821,7 @@
 
 									<div class="self-center">
 										<input
-											class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+											aria-label="{$i18n.t('Chunk Overlap')}" class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 											type="number"
 											placeholder={$i18n.t('Enter Chunk Overlap')}
 											bind:value={RAGConfig.CHUNK_OVERLAP}
@@ -849,7 +849,7 @@
 										</div>
 										<div class="self-center">
 											<input
-												class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Chunk Min Size Target')}" class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="number"
 												placeholder={$i18n.t('Enter Chunk Min Size Target')}
 												bind:value={RAGConfig.CHUNK_MIN_SIZE_TARGET}
@@ -877,7 +877,7 @@
 								</div>
 								<div class="flex items-center relative">
 									<select
-										class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
+										aria-label="{$i18n.t('Rag Embedding Engine')}" class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
 										bind:value={RAG_EMBEDDING_ENGINE}
 										placeholder={$i18n.t('Select an embedding model engine')}
 										on:change={(e) => {
@@ -903,7 +903,7 @@
 							{#if RAG_EMBEDDING_ENGINE === 'openai'}
 								<div class="my-0.5 flex gap-2 pr-2">
 									<input
-										class="flex-1 w-full text-sm bg-transparent outline-hidden"
+										aria-label="{$i18n.t('Open Aiurl')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 										placeholder={$i18n.t('API Base URL')}
 										bind:value={OpenAIUrl}
 										required
@@ -918,7 +918,7 @@
 							{:else if RAG_EMBEDDING_ENGINE === 'ollama'}
 								<div class="my-0.5 flex gap-2 pr-2">
 									<input
-										class="flex-1 w-full text-sm bg-transparent outline-hidden"
+										aria-label="{$i18n.t('Ollama URL')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 										placeholder={$i18n.t('API Base URL')}
 										bind:value={OllamaUrl}
 										required
@@ -934,7 +934,7 @@
 								<div class="my-0.5 flex flex-col gap-2 pr-2 w-full">
 									<div class="flex gap-2">
 										<input
-											class="flex-1 w-full text-sm bg-transparent outline-hidden"
+											aria-label="{$i18n.t('Azure Open Aiurl')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 											placeholder={$i18n.t('API Base URL')}
 											bind:value={AzureOpenAIUrl}
 											required
@@ -943,7 +943,7 @@
 									</div>
 									<div class="flex gap-2">
 										<input
-											class="flex-1 w-full text-sm bg-transparent outline-hidden"
+											aria-label="{$i18n.t('Azure Open Aiversion')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 											placeholder={$i18n.t('Version')}
 											bind:value={AzureOpenAIVersion}
 											required
@@ -961,7 +961,7 @@
 									<div class="flex w-full">
 										<div class="flex-1 mr-2">
 											<input
-												class="flex-1 w-full text-sm bg-transparent outline-hidden"
+												aria-label="{$i18n.t('Rag Embedding Model')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 												bind:value={RAG_EMBEDDING_MODEL}
 												placeholder={$i18n.t('Set embedding model')}
 												required
@@ -972,7 +972,7 @@
 									<div class="flex w-full">
 										<div class="flex-1 mr-2">
 											<input
-												class="flex-1 w-full text-sm bg-transparent outline-hidden"
+												aria-label="{$i18n.t('Rag Embedding Model')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 												placeholder={$i18n.t('Set embedding model (e.g. {{model}})', {
 													model: RAG_EMBEDDING_MODEL.slice(-40)
 												})}
@@ -1029,7 +1029,7 @@
 								<input
 									bind:value={RAG_EMBEDDING_BATCH_SIZE}
 									type="number"
-									class=" bg-transparent text-center w-14 outline-none"
+									aria-label="{$i18n.t('Rag Embedding Batch Size')}" class=" bg-transparent text-center w-14 outline-none"
 									min="-2"
 									max="16000"
 									step="1"
@@ -1069,7 +1069,7 @@
 									<input
 										bind:value={RAG_EMBEDDING_CONCURRENT_REQUESTS}
 										type="number"
-										class=" bg-transparent text-center w-14 outline-none"
+										aria-label="{$i18n.t('Rag Embedding Concurrent Requests')}" class=" bg-transparent text-center w-14 outline-none"
 										min="0"
 										step="1"
 									/>
@@ -1131,7 +1131,7 @@
 										</div>
 										<div class="flex items-center relative">
 											<select
-												class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
+												aria-label="{$i18n.t('Rag Reranking Engine')}" class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
 												bind:value={RAGConfig.RAG_RERANKING_ENGINE}
 												placeholder={$i18n.t('Select a reranking model engine')}
 												on:change={(e) => {
@@ -1151,7 +1151,7 @@
 									{#if RAGConfig.RAG_RERANKING_ENGINE === 'external'}
 										<div class="my-0.5 flex gap-2 pr-2">
 											<input
-												class="flex-1 w-full text-sm bg-transparent outline-hidden"
+												aria-label="{$i18n.t('Rag External Reranker URL')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 												placeholder={$i18n.t('API Base URL')}
 												bind:value={RAGConfig.RAG_EXTERNAL_RERANKER_URL}
 												required
@@ -1173,7 +1173,7 @@
 										<div class="flex w-full">
 											<div class="flex-1 mr-2">
 												<input
-													class="flex-1 w-full text-sm bg-transparent outline-hidden"
+													aria-label="{$i18n.t('Rag Reranking Model')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 													placeholder={$i18n.t('Set reranking model (e.g. {{model}})', {
 														model: 'BAAI/bge-reranker-v2-m3'
 													})}
@@ -1189,7 +1189,7 @@
 								<div class=" self-center text-xs font-medium">{$i18n.t('Top K')}</div>
 								<div class="flex items-center relative">
 									<input
-										class="flex-1 w-full text-sm bg-transparent outline-hidden"
+										aria-label="{$i18n.t('Top K')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 										type="number"
 										placeholder={$i18n.t('Enter Top K')}
 										bind:value={RAGConfig.TOP_K}
@@ -1204,7 +1204,7 @@
 									<div class="self-center text-xs font-medium">{$i18n.t('Top K Reranker')}</div>
 									<div class="flex items-center relative">
 										<input
-											class="flex-1 w-full text-sm bg-transparent outline-hidden"
+											aria-label="{$i18n.t('Top K Reranker')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 											type="number"
 											placeholder={$i18n.t('Enter Top K Reranker')}
 											bind:value={RAGConfig.TOP_K_RERANKER}
@@ -1223,7 +1223,7 @@
 										</div>
 										<div class="flex items-center relative">
 											<input
-												class="flex-1 w-full text-sm bg-transparent outline-hidden"
+												aria-label="{$i18n.t('Relevance Threshold')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 												type="number"
 												step="0.01"
 												placeholder={$i18n.t('Enter Score')}
@@ -1284,7 +1284,7 @@
 													max="1"
 													step="0.05"
 													bind:value={RAGConfig.HYBRID_BM25_WEIGHT}
-													class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+													aria-label="{$i18n.t('Hybrid Bm25 Weight')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 												/>
 
 												<div class="py-0.5">
@@ -1302,7 +1302,7 @@
 												<input
 													bind:value={RAGConfig.HYBRID_BM25_WEIGHT}
 													type="number"
-													class=" bg-transparent text-center w-14"
+													aria-label="{$i18n.t('Hybrid Bm25 Weight')}" class=" bg-transparent text-center w-14"
 													min="0"
 													max="1"
 													step="any"
@@ -1329,7 +1329,7 @@
 										placeholder={$i18n.t(
 											'Leave empty to use the default prompt, or enter a custom prompt'
 										)}
-									/>
+									 aria-label="{$i18n.t('Rag Template')}" />
 								</Tooltip>
 							</div>
 						</div>
@@ -1351,7 +1351,7 @@
 								placement="top-start"
 							>
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('Allowed File Extensions')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									type="text"
 									placeholder={$i18n.t('e.g. pdf, docx, txt')}
 									bind:value={RAGConfig.ALLOWED_FILE_EXTENSIONS}
@@ -1371,7 +1371,7 @@
 								placement="top-start"
 							>
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('File Max Size')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									type="number"
 									placeholder={$i18n.t('Leave empty for unlimited')}
 									bind:value={RAGConfig.FILE_MAX_SIZE}
@@ -1392,7 +1392,7 @@
 								placement="top-start"
 							>
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('File Max Count')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									type="number"
 									placeholder={$i18n.t('Leave empty for unlimited')}
 									bind:value={RAGConfig.FILE_MAX_COUNT}
@@ -1413,7 +1413,7 @@
 								placement="top-start"
 							>
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('File Image Compression Width')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									type="number"
 									placeholder={$i18n.t('Leave empty for no compression')}
 									bind:value={RAGConfig.FILE_IMAGE_COMPRESSION_WIDTH}
@@ -1436,7 +1436,7 @@
 								placement="top-start"
 							>
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('File Image Compression Height')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									type="number"
 									placeholder={$i18n.t('Leave empty for no compression')}
 									bind:value={RAGConfig.FILE_IMAGE_COMPRESSION_HEIGHT}

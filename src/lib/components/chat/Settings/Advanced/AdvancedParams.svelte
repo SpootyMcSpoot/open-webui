@@ -130,14 +130,14 @@
 							max="128"
 							step="1"
 							bind:value={params.stream_delta_chunk_size}
-							class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+							aria-label="{$i18n.t('Stream Delta Chunk Size')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 						/>
 					</div>
 					<div>
 						<input
 							bind:value={params.stream_delta_chunk_size}
 							type="number"
-							class=" bg-transparent text-center w-14"
+							aria-label="{$i18n.t('Stream Delta Chunk Size')}" class=" bg-transparent text-center w-14"
 							min="1"
 							step="any"
 						/>
@@ -220,7 +220,7 @@
 			<div class="flex mt-0.5 space-x-2">
 				<div class=" flex-1">
 					<input
-						class="text-sm w-full bg-transparent outline-hidden outline-none"
+						aria-label="{$i18n.t('Reasoning Tags[0]')}" class="text-sm w-full bg-transparent outline-hidden outline-none"
 						type="text"
 						placeholder={$i18n.t('Start Tag')}
 						bind:value={params.reasoning_tags[0]}
@@ -230,7 +230,7 @@
 
 				<div class=" flex-1">
 					<input
-						class="text-sm w-full bg-transparent outline-hidden outline-none"
+						aria-label="{$i18n.t('Reasoning Tags[1]')}" class="text-sm w-full bg-transparent outline-hidden outline-none"
 						type="text"
 						placeholder={$i18n.t('End Tag')}
 						bind:value={params.reasoning_tags[1]}
@@ -274,7 +274,7 @@
 			<div class="flex mt-0.5 space-x-2">
 				<div class=" flex-1">
 					<input
-						class="text-sm w-full bg-transparent outline-hidden outline-none"
+						aria-label="{$i18n.t('Seed')}" class="text-sm w-full bg-transparent outline-hidden outline-none"
 						type="number"
 						placeholder={$i18n.t('Enter Seed')}
 						bind:value={params.seed}
@@ -319,7 +319,7 @@
 			<div class="flex mt-0.5 space-x-2">
 				<div class=" flex-1">
 					<input
-						class="text-sm w-full bg-transparent outline-hidden outline-none"
+						aria-label="{$i18n.t('Stop')}" class="text-sm w-full bg-transparent outline-hidden outline-none"
 						type="text"
 						placeholder={$i18n.t('Enter stop sequence')}
 						bind:value={params.stop}
@@ -368,14 +368,14 @@
 						max="2"
 						step="0.05"
 						bind:value={params.temperature}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Temperature')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.temperature}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Temperature')}" class=" bg-transparent text-center w-14"
 						min="0"
 						max="2"
 						step="any"
@@ -417,7 +417,7 @@
 			<div class="flex mt-0.5 space-x-2">
 				<div class=" flex-1">
 					<input
-						class="text-sm w-full bg-transparent outline-hidden outline-none"
+						aria-label="{$i18n.t('Reasoning Effort')}" class="text-sm w-full bg-transparent outline-hidden outline-none"
 						type="text"
 						placeholder={$i18n.t('Enter reasoning effort')}
 						bind:value={params.reasoning_effort}
@@ -460,7 +460,7 @@
 			<div class="flex mt-0.5 space-x-2">
 				<div class=" flex-1">
 					<input
-						class="text-sm w-full bg-transparent outline-hidden outline-none"
+						aria-label="{$i18n.t('Logit Bias')}" class="text-sm w-full bg-transparent outline-hidden outline-none"
 						type="text"
 						placeholder={$i18n.t(
 							'Enter comma-separated "token:bias_value" pairs (example: 5432:100, 413:-100)'
@@ -512,14 +512,14 @@
 						max="131072"
 						step="1"
 						bind:value={params.max_tokens}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Max Tokens')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.max_tokens}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Max Tokens')}" class=" bg-transparent text-center w-14"
 						min="-2"
 						step="1"
 					/>
@@ -566,14 +566,14 @@
 						max="1000"
 						step="0.5"
 						bind:value={params.top_k}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Top K')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.top_k}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Top K')}" class=" bg-transparent text-center w-14"
 						min="0"
 						max="100"
 						step="any"
@@ -622,14 +622,14 @@
 						max="1"
 						step="0.05"
 						bind:value={params.top_p}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Top P')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.top_p}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Top P')}" class=" bg-transparent text-center w-14"
 						min="0"
 						max="1"
 						step="any"
@@ -677,14 +677,14 @@
 						max="1"
 						step="0.05"
 						bind:value={params.min_p}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Min P')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.min_p}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Min P')}" class=" bg-transparent text-center w-14"
 						min="0"
 						max="1"
 						step="any"
@@ -733,14 +733,14 @@
 						max="2"
 						step="0.05"
 						bind:value={params.frequency_penalty}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Frequency Penalty')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.frequency_penalty}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Frequency Penalty')}" class=" bg-transparent text-center w-14"
 						min="-2"
 						max="2"
 						step="any"
@@ -789,14 +789,14 @@
 						max="2"
 						step="0.05"
 						bind:value={params.presence_penalty}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Presence Penalty')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.presence_penalty}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Presence Penalty')}" class=" bg-transparent text-center w-14"
 						min="-2"
 						max="2"
 						step="any"
@@ -842,14 +842,14 @@
 						max="2"
 						step="1"
 						bind:value={params.mirostat}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Mirostat')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.mirostat}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Mirostat')}" class=" bg-transparent text-center w-14"
 						min="0"
 						max="2"
 						step="1"
@@ -897,14 +897,14 @@
 						max="1"
 						step="0.05"
 						bind:value={params.mirostat_eta}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Mirostat Eta')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.mirostat_eta}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Mirostat Eta')}" class=" bg-transparent text-center w-14"
 						min="0"
 						max="1"
 						step="any"
@@ -953,14 +953,14 @@
 						max="10"
 						step="0.5"
 						bind:value={params.mirostat_tau}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Mirostat Tau')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.mirostat_tau}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Mirostat Tau')}" class=" bg-transparent text-center w-14"
 						min="0"
 						max="10"
 						step="any"
@@ -1007,14 +1007,14 @@
 						max="128"
 						step="1"
 						bind:value={params.repeat_last_n}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Repeat Last N')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.repeat_last_n}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Repeat Last N')}" class=" bg-transparent text-center w-14"
 						min="-1"
 						max="128"
 						step="1"
@@ -1063,14 +1063,14 @@
 						max="2"
 						step="0.05"
 						bind:value={params.tfs_z}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Tfs Z')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.tfs_z}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Tfs Z')}" class=" bg-transparent text-center w-14"
 						min="0"
 						max="2"
 						step="any"
@@ -1119,14 +1119,14 @@
 						max="2"
 						step="0.05"
 						bind:value={params.repeat_penalty}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Repeat Penalty')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.repeat_penalty}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Repeat Penalty')}" class=" bg-transparent text-center w-14"
 						min="-2"
 						max="2"
 						step="any"
@@ -1264,7 +1264,7 @@
 			<div class="flex mt-0.5 space-x-2">
 				<div class=" flex-1">
 					<input
-						class="text-sm w-full bg-transparent outline-hidden outline-none"
+						aria-label="{$i18n.t('Think')}" class="text-sm w-full bg-transparent outline-hidden outline-none"
 						type="text"
 						placeholder={$i18n.t("e.g. 'low', 'medium', 'high'")}
 						bind:value={params.think}
@@ -1307,7 +1307,7 @@
 					className="w-full  text-sm bg-transparent outline-hidden"
 					placeholder={$i18n.t('e.g. "json" or a JSON schema')}
 					bind:value={params.format}
-				/>
+				 aria-label="{$i18n.t('Format')}" />
 			</div>
 		{/if}
 	</div>
@@ -1351,14 +1351,14 @@
 						max="10240000"
 						step="1"
 						bind:value={params.num_keep}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Num Keep')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div class="">
 					<input
 						bind:value={params.num_keep}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Num Keep')}" class=" bg-transparent text-center w-14"
 						min="-1"
 						step="1"
 					/>
@@ -1404,14 +1404,14 @@
 						max="10240000"
 						step="1"
 						bind:value={params.num_ctx}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Num Ctx')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div class="">
 					<input
 						bind:value={params.num_ctx}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Num Ctx')}" class=" bg-transparent text-center w-14"
 						min="-1"
 						step="1"
 					/>
@@ -1459,14 +1459,14 @@
 						max="8192"
 						step="256"
 						bind:value={params.num_batch}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						aria-label="{$i18n.t('Num Batch')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.num_batch}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						aria-label="{$i18n.t('Num Batch')}" class=" bg-transparent text-center w-14"
 						min="256"
 						step="256"
 					/>
@@ -1515,14 +1515,14 @@
 							max="256"
 							step="1"
 							bind:value={params.num_thread}
-							class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+							aria-label="{$i18n.t('Num Thread')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 						/>
 					</div>
 					<div class="">
 						<input
 							bind:value={params.num_thread}
 							type="number"
-							class=" bg-transparent text-center w-14"
+							aria-label="{$i18n.t('Num Thread')}" class=" bg-transparent text-center w-14"
 							min="1"
 							max="256"
 							step="1"
@@ -1571,14 +1571,14 @@
 							max="256"
 							step="1"
 							bind:value={params.num_gpu}
-							class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+							aria-label="{$i18n.t('Num Gpu')}" class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
 						/>
 					</div>
 					<div class="">
 						<input
 							bind:value={params.num_gpu}
 							type="number"
-							class=" bg-transparent text-center w-14"
+							aria-label="{$i18n.t('Num Gpu')}" class=" bg-transparent text-center w-14"
 							min="0"
 							max="256"
 							step="1"
@@ -1619,7 +1619,7 @@
 			{#if (params?.keep_alive ?? null) !== null}
 				<div class="flex mt-0.5 space-x-2">
 					<input
-						class="w-full text-sm bg-transparent outline-hidden"
+						aria-label="{$i18n.t('Keep Alive')}" class="w-full text-sm bg-transparent outline-hidden"
 						type="text"
 						placeholder={$i18n.t("e.g. '30s','10m'. Valid time units are 's', 'm', 'h'.")}
 						bind:value={params.keep_alive}
@@ -1636,7 +1636,7 @@
 							<div class=" self-center text-xs">
 								<input
 									type="text"
-									class=" text-xs w-full bg-transparent outline-none"
+									aria-label="{$i18n.t('Text Input')}" class=" text-xs w-full bg-transparent outline-none"
 									placeholder={$i18n.t('Custom Parameter Name')}
 									value={key}
 									on:change={(e) => {
@@ -1671,7 +1671,7 @@
 								<input
 									bind:value={params.custom_params[key]}
 									type="text"
-									class="text-sm w-full bg-transparent outline-hidden outline-none"
+									aria-label="{$i18n.t('Custom Params[Key]')}" class="text-sm w-full bg-transparent outline-hidden outline-none"
 									placeholder={$i18n.t('Custom Parameter Value')}
 								/>
 							</div>

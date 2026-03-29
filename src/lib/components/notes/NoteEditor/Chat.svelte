@@ -88,11 +88,11 @@ Based on the user's instruction, update and enhance the existing notes or select
 ## Input Structure
 - Existing notes: Enclosed within <notes></notes> XML tags.
 - Additional context: Enclosed within <context></context> XML tags.
-- Current note selection: Enclosed within <selection></selection> XML tags.
+- Current note selection: Enclosed within <selection aria-label="{$i18n.t('Dropdown Select')}"></selection> XML tags.
 - Editing instruction: Provided in the user message.
 
 ## Output Instructions
-- If a selection is provided, edit **only** the content within <selection></selection>. Leave unselected parts unchanged.
+- If a selection is provided, edit **only** the content within <selection aria-label="{$i18n.t('Dropdown Select')}"></selection>. Leave unselected parts unchanged.
 - If no selection is provided, edit the entire notes.
 - Deliver a single, rewritten version of the notes in markdown format.
 - Integrate information from the context only if it directly supports the user's instruction.
@@ -167,7 +167,7 @@ Based on the user's instruction, update and enhance the existing notes or select
 			(files && files.length > 0
 				? `\n<context>${files.map((file) => `${file.name}: ${file?.file?.data?.content ?? 'Could not extract content'}\n`).join('')}</context>`
 				: '') +
-			(selectedContent ? `\n<selection>${selectedContent?.text}</selection>` : '');
+			(selectedContent ? `\n<selection aria-label="{$i18n.t('Dropdown Select')}">${selectedContent?.text}</selection>` : '');
 
 		const chatMessages = JSON.parse(
 			JSON.stringify([
@@ -418,7 +418,7 @@ Based on the user's instruction, update and enhance the existing notes or select
 
 							<Tooltip content={selectedModelId}>
 								<select
-									class=" bg-transparent rounded-lg py-1 px-2 -mx-0.5 text-sm outline-hidden w-full text-right pr-5"
+									aria-label="{$i18n.t('Selected Model ID')}" class=" bg-transparent rounded-lg py-1 px-2 -mx-0.5 text-sm outline-hidden w-full text-right pr-5"
 									bind:value={selectedModelId}
 								>
 									{#each $models.filter((model) => !(model?.info?.meta?.hidden ?? false)) as model}

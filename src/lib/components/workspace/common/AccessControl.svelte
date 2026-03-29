@@ -469,7 +469,7 @@
 				>
 					<select
 						id="models"
-						class="outline-none bg-transparent text-sm font-medium block w-fit pr-10 max-w-full placeholder-gray-400"
+						aria-label="{$i18n.t('Models')}" class="outline-none bg-transparent text-sm font-medium block w-fit pr-10 max-w-full placeholder-gray-400"
 						value={!hasPublicReadGrant(accessGrants ?? []) ? 'private' : 'public'}
 						on:change={(e) => {
 							setPublic((e.target as HTMLSelectElement).value === 'public');

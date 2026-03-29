@@ -16,7 +16,7 @@
 </script>
 
 <Select.Root
-	selected={value ? items.find((item) => item.value === value) : null}
+	selected={value ? items.find((item) = aria-label="{$i18n.t('Dropdown Select')}"> item.value === value) : null}
 	{items}
 	onSelectedChange={(selectedItem) => {
 		value = selectedItem.value;
@@ -53,14 +53,14 @@
 	</Select.Trigger>
 
 	<Select.Content
-		class="rounded-2xl min-w-[170px] p-1 border border-gray-100  dark:border-gray-800 z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg"
+		aria-label="{$i18n.t('Dropdown Select')}" class="rounded-2xl min-w-[170px] p-1 border border-gray-100  dark:border-gray-800 z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg"
 		sameWidth={false}
 		align="start"
 	>
 		<slot>
 			{#each items as item}
 				<Select.Item
-					class="flex  gap-2  items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl capitalize"
+					aria-label="{$i18n.t('Dropdown Select')}" class="flex  gap-2  items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl capitalize"
 					value={item.value}
 					label={item.label}
 				>

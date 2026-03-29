@@ -281,7 +281,7 @@
 			id="models-import-input"
 			bind:this={modelsImportInputElement}
 			bind:files={importFiles}
-			type="file"
+			aria-label="{$i18n.t('Models Import Input')}" type="file"
 			accept=".json"
 			hidden
 			on:change={() => {

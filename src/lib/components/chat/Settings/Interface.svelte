@@ -304,7 +304,7 @@
 	<input
 		bind:this={filesInputElement}
 		bind:files={inputFiles}
-		type="file"
+		aria-label="{$i18n.t('Text Input')}" type="file"
 		hidden
 		accept="image/*"
 		on:change={() => {
@@ -380,7 +380,7 @@
 						<div class="flex-1 flex items-center">
 							<input
 								id="ui-scale-slider"
-								class="w-full"
+								aria-label="{$i18n.t('Text Scale')}" class="w-full"
 								type="range"
 								min="1"
 								max="1.5"

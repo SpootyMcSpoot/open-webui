@@ -155,7 +155,7 @@
 		</div>
 
 		<div class="flex items-center gap-1.5">
-			<input type="checkbox" bind:checked={deleteFolderContents} />
+			<input aria-label="{$i18n.t('Text Input')}" type="checkbox" bind:checked={deleteFolderContents} />
 
 			<div class="text-xs text-gray-600 dark:text-gray-400">
 				{$i18n.t('Delete all contents inside this folder')}

@@ -60,7 +60,7 @@
 							<div class=" self-center text-xs font-medium">{$i18n.t('Code Execution Engine')}</div>
 							<div class="flex items-center relative">
 								<select
-									class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
+									aria-label="{$i18n.t('Code Execution Engine')}" class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
 									bind:value={config.CODE_EXECUTION_ENGINE}
 									placeholder={$i18n.t('Select a engine')}
 									required
@@ -92,7 +92,7 @@
 							<div class="flex w-full">
 								<div class="flex-1">
 									<input
-										class="w-full text-sm py-0.5 placeholder:text-gray-300 dark:placeholder:text-gray-700 bg-transparent outline-hidden"
+										aria-label="{$i18n.t('Code Execution Jupyter URL')}" class="w-full text-sm py-0.5 placeholder:text-gray-300 dark:placeholder:text-gray-700 bg-transparent outline-hidden"
 										type="text"
 										placeholder={$i18n.t('Enter Jupyter URL')}
 										bind:value={config.CODE_EXECUTION_JUPYTER_URL}
@@ -110,7 +110,7 @@
 
 								<div>
 									<select
-										class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-left"
+										aria-label="{$i18n.t('Code Execution Jupyter Auth')}" class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-left"
 										bind:value={config.CODE_EXECUTION_JUPYTER_AUTH}
 										placeholder={$i18n.t('Select an auth method')}
 									>
@@ -152,7 +152,7 @@
 							<div class="">
 								<Tooltip content={$i18n.t('Enter timeout in seconds')}>
 									<input
-										class="w-fit rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
+										aria-label="{$i18n.t('Code Execution Jupyter Timeout')}" class="w-fit rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
 										type="number"
 										bind:value={config.CODE_EXECUTION_JUPYTER_TIMEOUT}
 										placeholder={$i18n.t('e.g. 60')}
@@ -187,7 +187,7 @@
 								</div>
 								<div class="flex items-center relative">
 									<select
-										class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
+										aria-label="{$i18n.t('Code Interpreter Engine')}" class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
 										bind:value={config.CODE_INTERPRETER_ENGINE}
 										placeholder={$i18n.t('Select a engine')}
 										required
@@ -220,7 +220,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full text-sm py-0.5 placeholder:text-gray-300 dark:placeholder:text-gray-700 bg-transparent outline-hidden"
+											aria-label="{$i18n.t('Code Interpreter Jupyter URL')}" class="w-full text-sm py-0.5 placeholder:text-gray-300 dark:placeholder:text-gray-700 bg-transparent outline-hidden"
 											type="text"
 											placeholder={$i18n.t('Enter Jupyter URL')}
 											bind:value={config.CODE_INTERPRETER_JUPYTER_URL}
@@ -238,7 +238,7 @@
 
 									<div>
 										<select
-											class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-left"
+											aria-label="{$i18n.t('Code Interpreter Jupyter Auth')}" class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-left"
 											bind:value={config.CODE_INTERPRETER_JUPYTER_AUTH}
 											placeholder={$i18n.t('Select an auth method')}
 										>
@@ -280,7 +280,7 @@
 								<div class="">
 									<Tooltip content={$i18n.t('Enter timeout in seconds')}>
 										<input
-											class="w-fit rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Code Interpreter Jupyter Timeout')}" class="w-fit rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
 											type="number"
 											bind:value={config.CODE_INTERPRETER_JUPYTER_TIMEOUT}
 											placeholder={$i18n.t('e.g. 60')}
@@ -310,7 +310,7 @@
 										placeholder={$i18n.t(
 											'Leave empty to use the default prompt, or enter a custom prompt'
 										)}
-									/>
+									 aria-label="{$i18n.t('Code Interpreter Prompt Template')}" />
 								</Tooltip>
 							</div>
 						</div>

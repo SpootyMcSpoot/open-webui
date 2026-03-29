@@ -67,7 +67,7 @@
 		<div class="flex w-full gap-2">
 			<div class="flex-1 relative">
 				<input
-					class={`w-full bg-transparent ${($settings?.highContrastMode ?? false) ? '' : 'outline-hidden'} ${pipeline ? 'pr-8' : ''}`}
+					aria-label="{$i18n.t('URL')}" class={`w-full bg-transparent ${($settings?.highContrastMode ?? false) ? '' : 'outline-hidden'} ${pipeline ? 'pr-8' : ''}`}
 					placeholder={$i18n.t('API Base URL')}
 					bind:value={url}
 					autocomplete="off"

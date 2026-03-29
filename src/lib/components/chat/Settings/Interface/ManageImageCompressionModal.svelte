@@ -65,7 +65,7 @@
 											id="image-comp-width"
 											bind:value={size.width}
 											type="number"
-											class="w-full bg-transparent outline-hidden text-center"
+											aria-label="{$i18n.t('Width')}" class="w-full bg-transparent outline-hidden text-center"
 											min="0"
 											placeholder={$i18n.t('Width')}
 										/>
@@ -83,7 +83,7 @@
 											id="image-comp-height"
 											bind:value={size.height}
 											type="number"
-											class="w-full bg-transparent outline-hidden text-center"
+											aria-label="{$i18n.t('Height')}" class="w-full bg-transparent outline-hidden text-center"
 											min="0"
 											placeholder={$i18n.t('Height')}
 										/>

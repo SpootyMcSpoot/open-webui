@@ -182,7 +182,7 @@
 									placement="top-start"
 								>
 									<select
-										class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
+										aria-label="{$i18n.t('Type')}" class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 										bind:value={type}
 									>
 										{#each channelTypes as channelType, channelTypeIdx (channelType)}
@@ -222,7 +222,7 @@
 
 						<div class="flex-1">
 							<input
-								class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
+								aria-label="{$i18n.t('Name')}" class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-hidden"
 								type="text"
 								bind:value={name}
 								placeholder={`${$i18n.t('new-channel')}`}

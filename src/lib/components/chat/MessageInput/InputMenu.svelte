@@ -102,7 +102,7 @@
 <!-- Hidden file input used to open the camera on mobile -->
 <input
 	id="camera-input"
-	type="file"
+	aria-label="{$i18n.t('Camera Input')}" type="file"
 	accept="image/*"
 	capture="environment"
 	on:change={handleFileChange}

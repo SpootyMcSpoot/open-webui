@@ -940,7 +940,7 @@ Provide the enhanced notes in markdown format. Use markdown syntax for headings,
 							{/if}
 
 							<input
-								class="w-full text-2xl font-medium bg-transparent outline-hidden"
+								aria-label="{$i18n.t('Title')}" class="w-full text-2xl font-medium bg-transparent outline-hidden"
 								type="text"
 								bind:value={note.title}
 								placeholder={titleGenerating ? $i18n.t('Generating...') : $i18n.t('Title')}

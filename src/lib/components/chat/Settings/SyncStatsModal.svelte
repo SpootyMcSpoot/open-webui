@@ -411,7 +411,7 @@
 						>
 							<label class="flex items-center gap-2 text-xs cursor-pointer">
 								<input
-									type="checkbox"
+									aria-label="{$i18n.t('Text Input')}" type="checkbox"
 									checked={syncMode === 'incremental'}
 									on:change={(e) => (syncMode = e.target.checked ? 'incremental' : 'full')}
 									disabled={syncing}

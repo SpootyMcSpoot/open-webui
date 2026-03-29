@@ -124,7 +124,7 @@
 					<div class="flex-1">
 						<div class=" text-xs mb-1">{$i18n.t('Local Task Model')}</div>
 						<select
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+							aria-label="{$i18n.t('Task Model')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 							bind:value={taskConfig.TASK_MODEL}
 							placeholder={$i18n.t('Select a model')}
 							on:change={() => {
@@ -167,7 +167,7 @@
 					<div class="flex-1">
 						<div class=" text-xs mb-1">{$i18n.t('External Task Model')}</div>
 						<select
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+							aria-label="{$i18n.t('Task Model External')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 							bind:value={taskConfig.TASK_MODEL_EXTERNAL}
 							placeholder={$i18n.t('Select a model')}
 							on:change={() => {
@@ -229,7 +229,7 @@
 								placeholder={$i18n.t(
 									'Leave empty to use the default prompt, or enter a custom prompt'
 								)}
-							/>
+							 aria-label="{$i18n.t('Title Generation Prompt Template')}" />
 						</Tooltip>
 					</div>
 				{/if}
@@ -264,7 +264,7 @@
 								placeholder={$i18n.t(
 									'Leave empty to use the default prompt, or enter a custom prompt'
 								)}
-							/>
+							 aria-label="{$i18n.t('Voice Mode Prompt Template')}" />
 						</Tooltip>
 					</div>
 				{/if}
@@ -290,7 +290,7 @@
 								placeholder={$i18n.t(
 									'Leave empty to use the default prompt, or enter a custom prompt'
 								)}
-							/>
+							 aria-label="{$i18n.t('Follow Up Generation Prompt Template')}" />
 						</Tooltip>
 					</div>
 				{/if}
@@ -316,7 +316,7 @@
 								placeholder={$i18n.t(
 									'Leave empty to use the default prompt, or enter a custom prompt'
 								)}
-							/>
+							 aria-label="{$i18n.t('Tags Generation Prompt Template')}" />
 						</Tooltip>
 					</div>
 				{/if}
@@ -349,7 +349,7 @@
 							placeholder={$i18n.t(
 								'Leave empty to use the default prompt, or enter a custom prompt'
 							)}
-						/>
+						 aria-label="{$i18n.t('Query Generation Prompt Template')}" />
 					</Tooltip>
 				</div>
 
@@ -374,7 +374,7 @@
 							placement="top-start"
 						>
 							<input
-								class="w-full outline-hidden bg-transparent"
+								aria-label="{$i18n.t('Autocomplete Generation Input Max Length')}" class="w-full outline-hidden bg-transparent"
 								bind:value={taskConfig.AUTOCOMPLETE_GENERATION_INPUT_MAX_LENGTH}
 								placeholder={$i18n.t('-1 for no limit, or a positive integer for a specific limit')}
 							/>
@@ -394,7 +394,7 @@
 							placeholder={$i18n.t(
 								'Leave empty to use the default prompt, or enter a custom prompt'
 							)}
-						/>
+						 aria-label="{$i18n.t('Image Prompt Generation Prompt Template')}" />
 					</Tooltip>
 				</div>
 
@@ -410,7 +410,7 @@
 							placeholder={$i18n.t(
 								'Leave empty to use the default prompt, or enter a custom prompt'
 							)}
-						/>
+						 aria-label="{$i18n.t('Tools Function Calling Prompt Template')}" />
 					</Tooltip>
 				</div>
 			</div>

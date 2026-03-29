@@ -167,7 +167,7 @@
 									bind:value={bio}
 									ariaLabel={$i18n.t('Bio')}
 									placeholder={$i18n.t('Share your background and interests')}
-								/>
+								 aria-label="{$i18n.t('Bio')}" />
 							</div>
 						</div>
 

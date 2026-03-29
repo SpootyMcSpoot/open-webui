@@ -323,7 +323,7 @@
 								<Tooltip content={$i18n.t('Enter Model ID')} placement="top-start">
 									<input
 										list="model-list"
-										class=" text-right text-sm bg-transparent outline-hidden max-w-full w-52"
+										aria-label="{$i18n.t('Image Generation Model')}" class=" text-right text-sm bg-transparent outline-hidden max-w-full w-52"
 										bind:value={config.IMAGE_GENERATION_MODEL}
 										placeholder={$i18n.t('Select a model')}
 										required
@@ -348,7 +348,7 @@
 
 								<Tooltip content={$i18n.t('Enter Image Size (e.g. 512x512)')} placement="top-start">
 									<input
-										class="  text-right text-sm bg-transparent outline-hidden max-w-full w-52"
+										aria-label="{$i18n.t('Image Size')}" class="  text-right text-sm bg-transparent outline-hidden max-w-full w-52"
 										placeholder={$i18n.t('Enter Image Size (e.g. 512x512)')}
 										bind:value={config.IMAGE_SIZE}
 									/>
@@ -370,7 +370,7 @@
 										placement="top-start"
 									>
 										<input
-											class=" text-right text-sm bg-transparent outline-hidden"
+											aria-label="{$i18n.t('Image Steps')}" class=" text-right text-sm bg-transparent outline-hidden"
 											placeholder={$i18n.t('Enter Number of Steps (e.g. 50)')}
 											bind:value={config.IMAGE_STEPS}
 											required
@@ -402,7 +402,7 @@
 							</div>
 
 							<select
-								class="w-fit pr-8 cursor-pointer rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+								aria-label="{$i18n.t('Image Generation Engine')}" class="w-fit pr-8 cursor-pointer rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 								bind:value={config.IMAGE_GENERATION_ENGINE}
 								placeholder={$i18n.t('Select Engine')}
 							>
@@ -426,7 +426,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Images Openai API Base URL')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('API Base URL')}
 											bind:value={config.IMAGES_OPENAI_API_BASE_URL}
 										/>
@@ -467,7 +467,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Images Openai API Version')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('API Version')}
 											bind:value={config.IMAGES_OPENAI_API_VERSION}
 										/>
@@ -491,7 +491,7 @@
 										bind:value={config.IMAGES_OPENAI_API_PARAMS}
 										placeholder={$i18n.t('Enter additional parameters in JSON format')}
 										minSize={100}
-									/>
+									 aria-label="{$i18n.t('Images Openai API Params')}" />
 								</div>
 							</div>
 						</div>
@@ -507,7 +507,7 @@
 								<div class="flex w-full">
 									<div class="flex-1 mr-2">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Automatic1111 Base URL')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('Enter URL (e.g. http://127.0.0.1:7860/)')}
 											bind:value={config.AUTOMATIC1111_BASE_URL}
 										/>
@@ -605,7 +605,7 @@
 										bind:value={config.AUTOMATIC1111_PARAMS}
 										placeholder={$i18n.t('Enter additional parameters in JSON format')}
 										minSize={100}
-									/>
+									 aria-label="{$i18n.t('Automatic1111 Params')}" />
 								</div>
 							</div>
 						</div>
@@ -621,7 +621,7 @@
 								<div class="flex w-full">
 									<div class="flex-1 mr-2">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Comfyui Base URL')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('Enter URL (e.g. http://127.0.0.1:7860/)')}
 											bind:value={config.COMFYUI_BASE_URL}
 										/>
@@ -684,7 +684,7 @@
 							<input
 								id="upload-comfyui-workflow-input"
 								hidden
-								type="file"
+								aria-label="{$i18n.t('Upload Comfyui Workflow Input')}" type="file"
 								accept=".json"
 								on:change={(e) => {
 									const file = e.target.files[0];
@@ -751,7 +751,7 @@
 								/>
 								<!-- {#if config.COMFYUI_WORKFLOW}
 									<Textarea
-										class="w-full rounded-lg my-1 py-2 px-3 text-xs bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden disabled:text-gray-600 resize-none"
+										aria-label="{$i18n.t('Comfyui Workflow')}" class="w-full rounded-lg my-1 py-2 px-3 text-xs bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden disabled:text-gray-600 resize-none"
 										rows="10"
 										bind:value={config.COMFYUI_WORKFLOW}
 										required
@@ -784,7 +784,7 @@
 												<div class="">
 													<Tooltip content={$i18n.t('Input Key (e.g. text, unet_name, steps)')}>
 														<input
-															class="py-1 w-24 text-xs bg-transparent outline-hidden"
+															aria-label="{$i18n.t('Key')}" class="py-1 w-24 text-xs bg-transparent outline-hidden"
 															placeholder={$i18n.t('Key')}
 															bind:value={node.key}
 															required
@@ -800,7 +800,7 @@
 														placement="top-start"
 													>
 														<input
-															class="w-full py-1 text-xs bg-transparent outline-hidden"
+															aria-label="{$i18n.t('Node Ids')}" class="w-full py-1 text-xs bg-transparent outline-hidden"
 															placeholder={$i18n.t('Node Ids')}
 															bind:value={node.node_ids}
 														/>
@@ -828,7 +828,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Images Gemini API Base URL')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('API Base URL')}
 											bind:value={config.IMAGES_GEMINI_API_BASE_URL}
 										/>
@@ -867,7 +867,7 @@
 								</div>
 
 								<select
-									class="w-fit pr-8 cursor-pointer rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+									aria-label="{$i18n.t('Images Gemini Endpoint Method')}" class="w-fit pr-8 cursor-pointer rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 									bind:value={config.IMAGES_GEMINI_ENDPOINT_METHOD}
 									placeholder={$i18n.t('Select Method')}
 								>
@@ -908,7 +908,7 @@
 								<Tooltip content={$i18n.t('Enter Model ID')} placement="top-start">
 									<input
 										list="model-list"
-										class="text-right text-sm bg-transparent outline-hidden max-w-full w-52"
+										aria-label="{$i18n.t('Image Edit Model')}" class="text-right text-sm bg-transparent outline-hidden max-w-full w-52"
 										bind:value={config.IMAGE_EDIT_MODEL}
 										placeholder={$i18n.t('Select a model')}
 									/>
@@ -932,7 +932,7 @@
 
 								<Tooltip content={$i18n.t('Enter Image Size (e.g. 512x512)')} placement="top-start">
 									<input
-										class="text-right text-sm bg-transparent outline-hidden max-w-full w-52"
+										aria-label="{$i18n.t('Image Edit Size')}" class="text-right text-sm bg-transparent outline-hidden max-w-full w-52"
 										placeholder={$i18n.t('Enter Image Size (e.g. 512x512)')}
 										bind:value={config.IMAGE_EDIT_SIZE}
 									/>
@@ -950,7 +950,7 @@
 							</div>
 
 							<select
-								class="w-fit pr-8 cursor-pointer rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
+								aria-label="{$i18n.t('Image Edit Engine')}" class="w-fit pr-8 cursor-pointer rounded-sm px-2 text-xs bg-transparent outline-hidden text-right"
 								bind:value={config.IMAGE_EDIT_ENGINE}
 								placeholder={$i18n.t('Select Engine')}
 							>
@@ -973,7 +973,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Images Edit Openai API Base URL')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('API Base URL')}
 											bind:value={config.IMAGES_EDIT_OPENAI_API_BASE_URL}
 										/>
@@ -1014,7 +1014,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Images Edit Openai API Version')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('API Version')}
 											bind:value={config.IMAGES_EDIT_OPENAI_API_VERSION}
 										/>
@@ -1034,7 +1034,7 @@
 								<div class="flex w-full">
 									<div class="flex-1 mr-2">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Images Edit Comfyui Base URL')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('Enter URL (e.g. http://127.0.0.1:7860/)')}
 											bind:value={config.IMAGES_EDIT_COMFYUI_BASE_URL}
 										/>
@@ -1097,7 +1097,7 @@
 							<input
 								id="upload-comfyui-edit-workflow-input"
 								hidden
-								type="file"
+								aria-label="{$i18n.t('Upload Comfyui Edit Workflow Input')}" type="file"
 								accept=".json"
 								on:change={(e) => {
 									const file = e.target.files[0];
@@ -1189,7 +1189,7 @@
 												<div class="">
 													<Tooltip content={$i18n.t('Input Key (e.g. text, unet_name, steps)')}>
 														<input
-															class="py-1 w-24 text-xs bg-transparent outline-hidden"
+															aria-label="{$i18n.t('Key')}" class="py-1 w-24 text-xs bg-transparent outline-hidden"
 															placeholder={$i18n.t('Key')}
 															bind:value={node.key}
 															required
@@ -1205,7 +1205,7 @@
 														placement="top-start"
 													>
 														<input
-															class="w-full py-1 text-xs bg-transparent outline-hidden"
+															aria-label="{$i18n.t('Node Ids')}" class="w-full py-1 text-xs bg-transparent outline-hidden"
 															placeholder={$i18n.t('Node Ids')}
 															bind:value={node.node_ids}
 														/>
@@ -1233,7 +1233,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full text-sm bg-transparent outline-hidden text-right"
+											aria-label="{$i18n.t('Images Edit Gemini API Base URL')}" class="w-full text-sm bg-transparent outline-hidden text-right"
 											placeholder={$i18n.t('API Base URL')}
 											bind:value={config.IMAGES_EDIT_GEMINI_API_BASE_URL}
 										/>

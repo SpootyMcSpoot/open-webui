@@ -198,7 +198,7 @@
 				<input
 					bind:this={importInputElement}
 					bind:files={importFiles}
-					type="file"
+					aria-label="{$i18n.t('Text Input')}" type="file"
 					accept=".md,.json"
 					hidden
 					on:change={() => {

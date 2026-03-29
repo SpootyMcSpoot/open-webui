@@ -641,7 +641,7 @@
 					<div class="flex w-full">
 						<div class="flex-1 mr-2">
 							<input
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								aria-label="{$i18n.t('Model Tag')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 								placeholder={$i18n.t('Enter model tag (e.g. {{modelTag}})', {
 									modelTag: 'mistral:7b'
 								})}
@@ -812,7 +812,7 @@
 							class="flex-1 mr-2 pr-1.5 rounded-lg bg-gray-50 dark:text-gray-300 dark:bg-gray-850"
 						>
 							<select
-								class="w-full py-2 px-4 text-sm outline-hidden bg-transparent"
+								aria-label="{$i18n.t('Delete Model Tag')}" class="w-full py-2 px-4 text-sm outline-hidden bg-transparent"
 								bind:value={deleteModelTag}
 								placeholder={$i18n.t('Select a model')}
 							>
@@ -855,7 +855,7 @@
 					<div class="flex w-full">
 						<div class="flex-1 mr-2 flex flex-col gap-2">
 							<input
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								aria-label="{$i18n.t('Create Model Name')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 								placeholder={$i18n.t('Enter model tag (e.g. {{modelTag}})', {
 									modelTag: 'my-modelfile'
 								})}
@@ -865,7 +865,7 @@
 
 							<textarea
 								bind:value={createModelObject}
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-100 dark:bg-gray-850 outline-hidden resize-none scrollbar-hidden"
+								aria-label="{$i18n.t('Create Model Object')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-100 dark:bg-gray-850 outline-hidden resize-none scrollbar-hidden"
 								rows="6"
 								placeholder={`e.g. {"model": "my-modelfile", "from": "ollama:7b"})`}
 								disabled={createModelLoading}
@@ -973,7 +973,7 @@
 										<input
 											id="model-upload-input"
 											bind:this={modelUploadInputElement}
-											type="file"
+											aria-label="{$i18n.t('Model Upload Input')}" type="file"
 											bind:files={modelInputFile}
 											on:change={() => {
 												console.log(modelInputFile);
@@ -1000,7 +1000,7 @@
 								{:else}
 									<div class="flex-1 {modelFileUrl !== '' ? 'mr-2' : ''}">
 										<input
-											class="w-full rounded-lg text-left py-2 px-4 bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden {modelFileUrl !==
+											aria-label="{$i18n.t('Model File URL')}" class="w-full rounded-lg text-left py-2 px-4 bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden {modelFileUrl !==
 											''
 												? 'mr-2'
 												: ''}"
@@ -1078,7 +1078,7 @@
 									</div>
 									<textarea
 										bind:value={modelFileContent}
-										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-100 dark:bg-gray-850 outline-hidden resize-none"
+										aria-label="{$i18n.t('Model File Content')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-100 dark:bg-gray-850 outline-hidden resize-none"
 										rows="6"
 									/>
 								</div>

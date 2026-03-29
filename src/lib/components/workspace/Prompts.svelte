@@ -233,7 +233,7 @@
 			id="prompts-import-input"
 			bind:this={promptsImportInputElement}
 			bind:files={importFiles}
-			type="file"
+			aria-label="{$i18n.t('Prompts Import Input')}" type="file"
 			accept=".json"
 			hidden
 			on:change={() => {

@@ -54,7 +54,7 @@
 		<input
 			id="config-json-input"
 			hidden
-			type="file"
+			aria-label="{$i18n.t('Config Json Input')}" type="file"
 			accept=".json"
 			on:change={(e) => {
 				const file = e.target.files[0];

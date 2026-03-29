@@ -76,7 +76,7 @@
 <input
 	bind:this={filesInputElement}
 	bind:files={inputFiles}
-	type="file"
+	aria-label="{$i18n.t('Text Input')}" type="file"
 	hidden
 	accept="image/*"
 	on:change={handleImageUpload}
@@ -133,7 +133,7 @@
 					<div class=" text-gray-600 dark:text-gray-400 text-xs">{$i18n.t('Name')}</div>
 					<input
 						type="text"
-						class="w-full text-sm bg-transparent outline-none placeholder:text-gray-300 dark:placeholder:text-gray-700"
+						aria-label="{$i18n.t('Name')}" class="w-full text-sm bg-transparent outline-none placeholder:text-gray-300 dark:placeholder:text-gray-700"
 						bind:value={name}
 						placeholder={$i18n.t('Webhook Name')}
 					/>

@@ -156,7 +156,7 @@
 						</div>
 						<div class="flex items-center relative">
 							<select
-								class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
+								aria-label="{$i18n.t('Web Search Engine')}" class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
 								bind:value={webConfig.WEB_SEARCH_ENGINE}
 								placeholder={$i18n.t('Select a engine')}
 								required
@@ -201,7 +201,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Perplexity Search API URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Perplexity Search API URL')}
 												bind:value={webConfig.PERPLEXITY_SEARCH_API_URL}
@@ -238,7 +238,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Searxng Query URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Searxng Query URL')}
 												bind:value={webConfig.SEARXNG_QUERY_URL}
@@ -256,7 +256,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Searxng Language')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Searxng search language')}
 												bind:value={webConfig.SEARXNG_LANGUAGE}
@@ -277,7 +277,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Yacy Query URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Yacy URL (e.g. http://yacy.example.com:8090)')}
 												bind:value={webConfig.YACY_QUERY_URL}
@@ -295,7 +295,7 @@
 										</div>
 
 										<input
-											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+											aria-label="{$i18n.t('Yacy Username')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 											placeholder={$i18n.t('Enter Yacy Username')}
 											bind:value={webConfig.YACY_USERNAME}
 											required
@@ -334,7 +334,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Google Pse Engine ID')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Google PSE Engine Id')}
 												bind:value={webConfig.GOOGLE_PSE_ENGINE_ID}
@@ -468,7 +468,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Searchapi Engine')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter SearchApi Engine')}
 												bind:value={webConfig.SEARCHAPI_ENGINE}
@@ -498,7 +498,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Serpapi Engine')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter SerpApi Engine')}
 												bind:value={webConfig.SERPAPI_ENGINE}
@@ -518,7 +518,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Jina API Base URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Jina API Base URL')}
 												bind:value={webConfig.JINA_API_BASE_URL}
@@ -549,7 +549,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Bing Search V7 Endpoint')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Bing Search V7 Endpoint')}
 												bind:value={webConfig.BING_SEARCH_V7_ENDPOINT}
@@ -604,7 +604,7 @@
 									</div>
 									<input
 										list="perplexity-model-list"
-										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+										aria-label="{$i18n.t('Perplexity Model')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 										bind:value={webConfig.PERPLEXITY_MODEL}
 									/>
 
@@ -624,7 +624,7 @@
 										{$i18n.t('Perplexity Search Context Usage')}
 									</div>
 									<select
-										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+										aria-label="{$i18n.t('Perplexity Search Context Usage')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 										bind:value={webConfig.PERPLEXITY_SEARCH_CONTEXT_USAGE}
 									>
 										<option value="low">{$i18n.t('Low')}</option>
@@ -668,7 +668,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Firecrawl API Base URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Firecrawl API Base URL')}
 												bind:value={webConfig.FIRECRAWL_API_BASE_URL}
@@ -697,7 +697,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Firecrawl Timeout')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="number"
 												placeholder={$i18n.t('Enter Firecrawl Timeout')}
 												bind:value={webConfig.FIRECRAWL_TIMEOUT}
@@ -717,7 +717,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('External Web Search URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter External Web Search URL')}
 												bind:value={webConfig.EXTERNAL_WEB_SEARCH_URL}
@@ -748,7 +748,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<input
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Yandex Web Search URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												type="text"
 												placeholder={$i18n.t('Enter Yandex Web Search URL')}
 												bind:value={webConfig.YANDEX_WEB_SEARCH_URL}
@@ -783,7 +783,7 @@
 											placeholder={$i18n.t(
 												'Leave empty to use the default config, or enter a valid json (see https://yandex.cloud/en/docs/search-api/api-ref/WebSearch/search#yandex.cloud.searchapi.v2.WebSearchRequest)'
 											)}
-										/>
+										 aria-label="{$i18n.t('Yandex Web Search Config')}" />
 									</Tooltip>
 								</div>
 							</div>
@@ -812,7 +812,7 @@
 									<div class="flex w-full">
 										<div class="flex-1">
 											<select
-												class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+												aria-label="{$i18n.t('Ddgs Backend')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 												bind:value={webConfig.DDGS_BACKEND}
 											>
 												<option value="auto">{$i18n.t('Auto (Random)')}</option>
@@ -842,7 +842,7 @@
 									</div>
 
 									<input
-										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+										aria-label="{$i18n.t('Web Search Result Count')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 										placeholder={$i18n.t('Search Result Count')}
 										bind:value={webConfig.WEB_SEARCH_RESULT_COUNT}
 										required
@@ -862,7 +862,7 @@
 									</div>
 
 									<input
-										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+										aria-label="{$i18n.t('Web Search Concurrent Requests')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 										placeholder={$i18n.t('Concurrent Requests')}
 										bind:value={webConfig.WEB_SEARCH_CONCURRENT_REQUESTS}
 										type="number"
@@ -878,7 +878,7 @@
 							</div>
 
 							<input
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								aria-label="{$i18n.t('Web Search Domain Filter List')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 								placeholder={$i18n.t(
 									'Enter domains separated by commas (e.g., example.com,site.org,!excludedsite.com)'
 								)}
@@ -950,7 +950,7 @@
 						</div>
 						<div class="flex items-center relative">
 							<select
-								class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
+								aria-label="{$i18n.t('Web Loader Engine')}" class="w-fit pr-8 rounded-sm px-2 p-1 text-xs bg-transparent outline-hidden text-right"
 								bind:value={webConfig.WEB_LOADER_ENGINE}
 								placeholder={$i18n.t('Select a engine')}
 							>
@@ -969,7 +969,7 @@
 							</div>
 							<div class="flex items-center relative">
 								<input
-									class="flex-1 w-full text-sm bg-transparent outline-hidden"
+									aria-label="{$i18n.t('Web Loader Timeout')}" class="flex-1 w-full text-sm bg-transparent outline-hidden"
 									placeholder={$i18n.t('Timeout')}
 									bind:value={webConfig.WEB_LOADER_TIMEOUT}
 								/>
@@ -994,7 +994,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+											aria-label="{$i18n.t('Playwright Ws URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 											type="text"
 											placeholder={$i18n.t('Enter Playwright WebSocket URL')}
 											bind:value={webConfig.PLAYWRIGHT_WS_URL}
@@ -1012,7 +1012,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+											aria-label="{$i18n.t('Playwright Timeout')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 											placeholder={$i18n.t('Enter Playwright Timeout')}
 											bind:value={webConfig.PLAYWRIGHT_TIMEOUT}
 											autocomplete="off"
@@ -1031,7 +1031,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+											aria-label="{$i18n.t('Firecrawl API Base URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 											type="text"
 											placeholder={$i18n.t('Enter Firecrawl API Base URL')}
 											bind:value={webConfig.FIRECRAWL_API_BASE_URL}
@@ -1062,7 +1062,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+											aria-label="{$i18n.t('Tavily Extract Depth')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 											type="text"
 											placeholder={$i18n.t('Enter Tavily Extract Depth')}
 											bind:value={webConfig.TAVILY_EXTRACT_DEPTH}
@@ -1095,7 +1095,7 @@
 								<div class="flex w-full">
 									<div class="flex-1">
 										<input
-											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+											aria-label="{$i18n.t('External Web Loader URL')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 											type="text"
 											placeholder={$i18n.t('Enter External Web Loader URL')}
 											bind:value={webConfig.EXTERNAL_WEB_LOADER_URL}
@@ -1124,7 +1124,7 @@
 						</div>
 
 						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+							aria-label="{$i18n.t('Web Loader Concurrent Requests')}" class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
 							placeholder={$i18n.t('Concurrent Requests')}
 							bind:value={webConfig.WEB_LOADER_CONCURRENT_REQUESTS}
 							required
@@ -1137,7 +1137,7 @@
 						</div>
 						<div class="flex items-center relative">
 							<input
-								class="flex-1 w-full rounded-lg text-sm bg-transparent outline-hidden"
+								aria-label="{$i18n.t('Youtube Loader Language')}" class="flex-1 w-full rounded-lg text-sm bg-transparent outline-hidden"
 								type="text"
 								placeholder={$i18n.t('Enter language codes')}
 								bind:value={webConfig.YOUTUBE_LOADER_LANGUAGE}
@@ -1152,7 +1152,7 @@
 						</div>
 						<div class="flex items-center relative">
 							<input
-								class="flex-1 w-full rounded-lg text-sm bg-transparent outline-hidden"
+								aria-label="{$i18n.t('Youtube Loader Proxy URL')}" class="flex-1 w-full rounded-lg text-sm bg-transparent outline-hidden"
 								type="text"
 								placeholder={$i18n.t('Enter proxy URL (e.g. https://user:password@host:port)')}
 								bind:value={webConfig.YOUTUBE_LOADER_PROXY_URL}

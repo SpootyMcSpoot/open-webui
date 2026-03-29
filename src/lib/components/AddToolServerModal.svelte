@@ -426,7 +426,7 @@
 			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				<input
 					bind:this={inputElement}
-					type="file"
+					aria-label="{$i18n.t('Text Input')}" type="file"
 					hidden
 					accept=".json"
 					on:change={(e) => {
@@ -478,7 +478,7 @@
 								<div class="flex flex-1 items-center">
 									<input
 										id="enter-name"
-										class={`w-full flex-1 text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+										aria-label="{$i18n.t('Name')}" class={`w-full flex-1 text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 										type="text"
 										bind:value={name}
 										placeholder={$i18n.t('Enter name')}
@@ -500,7 +500,7 @@
 									<div class="flex flex-1 items-center">
 										<input
 											id="enter-id"
-											class={`w-full flex-1 text-sm bg-transparent font-mono ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+											aria-label="{$i18n.t('ID')}" class={`w-full flex-1 text-sm bg-transparent font-mono ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 											type="text"
 											bind:value={id}
 											placeholder="auto"
@@ -522,7 +522,7 @@
 							<div class="flex-1">
 								<input
 									id="description"
-									class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+									aria-label="{$i18n.t('Description')}" class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 									type="text"
 									bind:value={description}
 									placeholder={$i18n.t('Enter description')}
@@ -544,7 +544,7 @@
 								<div class="flex flex-1 items-center">
 									<input
 										id="api-base-url"
-										class={`w-full flex-1 text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+										aria-label="{$i18n.t('URL')}" class={`w-full flex-1 text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 										type="text"
 										bind:value={url}
 										placeholder={$i18n.t('API Base URL')}
@@ -640,7 +640,7 @@
 									<div class="flex-shrink-0 self-start">
 										<select
 											id="select-bearer-or-session"
-											class={`dark:bg-gray-900 w-full text-sm bg-transparent pr-5 ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+											aria-label="{$i18n.t('Auth Type')}" class={`dark:bg-gray-900 w-full text-sm bg-transparent pr-5 ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 											bind:value={auth_type}
 										>
 											<option value="none">{$i18n.t('None')}</option>
@@ -751,7 +751,7 @@
 											<div class="flex-shrink-0 self-start">
 												<select
 													id="select-bearer-or-session"
-													class={`dark:bg-gray-900 w-full text-sm bg-transparent pr-5 ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+													aria-label="{$i18n.t('Spec Type')}" class={`dark:bg-gray-900 w-full text-sm bg-transparent pr-5 ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 													bind:value={spec_type}
 												>
 													<option value="url">{$i18n.t('URL')}</option>
@@ -766,7 +766,7 @@
 															>{$i18n.t('openapi.json URL or Path')}</label
 														>
 														<input
-															class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+															aria-label="{$i18n.t('Path')}" class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 															type="text"
 															id="url-or-path"
 															bind:value={path}
@@ -781,7 +781,7 @@
 													>
 														<label for="url-or-path" class="sr-only">{$i18n.t('JSON Spec')}</label>
 														<textarea
-															class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700 text-black dark:text-white'}`}
+															aria-label="{$i18n.t('Spec')}" class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700 text-black dark:text-white'}`}
 															bind:value={spec}
 															placeholder={$i18n.t('JSON Spec')}
 															autocomplete="off"
@@ -830,7 +830,7 @@
 													placeholder={$i18n.t('Enter additional headers in JSON format')}
 													required={false}
 													minSize={30}
-												/>
+												 aria-label="{$i18n.t('Headers')}" />
 											</Tooltip>
 										</div>
 									</div>
@@ -851,7 +851,7 @@
 								<div class="flex-1">
 									<input
 										id="function-name-filter-list"
-										class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
+										aria-label="{$i18n.t('Function Name Filter List')}" class={`w-full text-sm bg-transparent ${($settings?.highContrastMode ?? false) ? 'placeholder:text-gray-700 dark:placeholder:text-gray-100' : 'outline-hidden placeholder:text-gray-300 dark:placeholder:text-gray-700'}`}
 										type="text"
 										bind:value={functionNameFilterList}
 										placeholder={$i18n.t('Enter function name filter list (e.g. func1, !func2)')}
