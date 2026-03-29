@@ -16,7 +16,7 @@
 	import { getUserSettings } from '$lib/apis/users';
 
 	import { WEBUI_VERSION, WEBUI_API_BASE_URL } from '$lib/constants';
-	import { compareVersion } from '$lib/utils';
+	import { compareVersion, formatError } from '$lib/utils';
 
 	import {
 		config,
@@ -110,23 +110,29 @@
 	};
 
 	const setModels = async () => {
-		models.set(
-			await getModels(
-				localStorage.token,
-				$config?.features?.enable_direct_connections ? ($settings?.directConnections ?? null) : null
-			)
-		);
+		try {
+			models.set(
+				await getModels(
+					localStorage.token,
+					$config?.features?.enable_direct_connections ? ($settings?.directConnections ?? null) : null
+				)
+			);
+		} catch (error) {
+			const friendlyError = formatError(error, { operation: 'load models' });
+			toast.error(friendlyError.message);
+			console.error('Failed to load models:', error);
+		}
 	};
 
 	const setToolServers = async () => {
 		let toolServersData = await getToolServersData($settings?.toolServers ?? []);
 		toolServersData = toolServersData.filter((data) => {
 			if (!data || data.error) {
-				toast.error(
-					$i18n.t(`Failed to connect to {{URL}} OpenAPI tool server`, {
-						URL: data?.url
-					})
-				);
+				const friendlyError = formatError(data.error, {
+					operation: 'connect to tool server',
+					url: data?.url
+				});
+				toast.error(friendlyError.message);
 				return false;
 			}
 			return true;
@@ -148,11 +154,11 @@
 			terminalServersData = terminalServersData
 				.filter((data) => {
 					if (!data || data.error) {
-						toast.error(
-							$i18n.t(`Failed to connect to {{URL}} terminal server`, {
-								URL: data?.url
-							})
-						);
+						const friendlyError = formatError(data.error, {
+							operation: 'connect to terminal server',
+							url: data?.url
+						});
+						toast.error(friendlyError.message);
 						return false;
 					}
 					return true;
