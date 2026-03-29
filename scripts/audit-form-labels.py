@@ -19,9 +19,12 @@ TEXTAREA_PATTERN = re.compile(r"<textarea[^>]*>", re.IGNORECASE)
 SELECT_PATTERN = re.compile(r"<select[^>]*>", re.IGNORECASE)
 
 # Patterns for label attributes
-ARIA_LABEL_PATTERN = re.compile(r'aria-label\s*=\s*["\']([^"\']+)["\']', re.IGNORECASE)
+# Updated to support both string literals AND Svelte expressions
+ARIA_LABEL_PATTERN = re.compile(
+    r'aria-label\s*=\s*(?:["\']([^"\']+)["\']|{[^}]+})', re.IGNORECASE
+)
 ARIA_LABELLEDBY_PATTERN = re.compile(
-    r'aria-labelledby\s*=\s*["\']([^"\']+)["\']', re.IGNORECASE
+    r'aria-labelledby\s*=\s*(?:["\']([^"\']+)["\']|{[^}]+})', re.IGNORECASE
 )
 ID_PATTERN = re.compile(r'\bid\s*=\s*["\']([^"\']+)["\']', re.IGNORECASE)
 PLACEHOLDER_PATTERN = re.compile(
@@ -41,13 +44,22 @@ def has_label_attribute(element: str) -> Dict[str, str]:
         "placeholder": None,
     }
 
+    # Check for aria-label (both string literals and Svelte expressions)
     aria_label_match = ARIA_LABEL_PATTERN.search(element)
     if aria_label_match:
-        result["aria_label"] = aria_label_match.group(1)
+        # Group 1 is the string literal, if no group 1 it's a Svelte expression
+        result["aria_label"] = (
+            aria_label_match.group(1) if aria_label_match.group(1) else "expression"
+        )
 
+    # Check for aria-labelledby (both string literals and Svelte expressions)
     aria_labelledby_match = ARIA_LABELLEDBY_PATTERN.search(element)
     if aria_labelledby_match:
-        result["aria_labelledby"] = aria_labelledby_match.group(1)
+        result["aria_labelledby"] = (
+            aria_labelledby_match.group(1)
+            if aria_labelledby_match.group(1)
+            else "expression"
+        )
 
     id_match = ID_PATTERN.search(element)
     if id_match:
@@ -171,9 +183,7 @@ def main():
                 if issue["placeholder"]:
                     print(f"    Placeholder: {issue['placeholder']}")
                 if issue["has_placeholder_only"]:
-                    print(
-                        "    ⚠️  Has placeholder but no proper label (WCAG violation)"
-                    )
+                    print("    ⚠️  Has placeholder but no proper label (WCAG violation)")
                 print(f"    Element: {issue['element']}")
 
         print("\n\nSUMMARY:")
