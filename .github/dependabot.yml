@@ -1,20 +1,82 @@
+# Weekly dependency patches across all configured ecosystems.
 version: 2
 updates:
-  - package-ecosystem: uv
-    directory: '/'
+- package-ecosystem: uv
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+- package-ecosystem: pip
+  directory: /backend
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+- package-ecosystem: github-actions
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+- package-ecosystem: docker
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+- package-ecosystem: docker-compose
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+- package-ecosystem: npm
+  directory: /
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+- package-ecosystem: pip
+  directory: /backend/open_webui/utils/telemetry
+  multi-ecosystem-group: weekly-patches
+  patterns:
+  - '*'
+  ignore:
+  - dependency-name: '*'
+    update-types:
+    - version-update:semver-major
+    - version-update:semver-minor
+multi-ecosystem-groups:
+  weekly-patches:
     schedule:
-      interval: monthly
-    target-branch: 'dev'
-
-  - package-ecosystem: pip
-    directory: '/backend'
-    schedule:
-      interval: monthly
-    target-branch: 'dev'
-
-  - package-ecosystem: 'github-actions'
-    directory: '/'
-    schedule:
-      # Check for updates to GitHub Actions every week
-      interval: monthly
-    target-branch: 'dev'
+      interval: weekly
+      day: monday
+      time: 09:00
+      timezone: America/Los_Angeles
+    open-pull-requests-limit: 1
+    target-branch: dev
